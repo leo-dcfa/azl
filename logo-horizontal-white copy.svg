@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="280" height="60" viewBox="0 0 280 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Four Tiles Logo Mark -->
+  <rect x="2" y="6" width="22" height="22" rx="4" fill="#1E5AA8"/>
+  <rect x="26" y="6" width="22" height="22" rx="4" fill="#3B82C4"/>
+  <rect x="2" y="30" width="22" height="22" rx="4" fill="#5BA3D9"/>
+  <rect x="26" y="30" width="22" height="22" rx="4" fill="#1E5AA8"/>
+  
+  <!-- Central A -->
+  <path d="M25 10L38 50H32L29 42H21L18 50H12L25 10Z" fill="white"/>
+  <rect x="20" y="32" width="10" height="3" rx="1.5" fill="#1E5AA8"/>
+  
+  <!-- Wordmark - White -->
+  <text x="60" y="40" font-family="Georgia, serif" font-size="28" font-weight="500" fill="white">Azul <tspan fill="#5BA3D9">Labs</tspan></text>
+</svg>
