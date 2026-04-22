@@ -1,12 +1,12 @@
 ---
-title: Welcome to the notebook
-description: Why I'm starting a research blog, and what to expect here.
+title: A lab notebook
+description: Why a lab notebook
 date: 2026-04-22
 tags:
   - meta
 ---
 
-This is the start of a research notebook tied to a possible PhD. I'm using it as a public thinking space — a place to put reading notes, half-formed arguments, and the kind of writing that usually sits in a private Obsidian vault.
+A [lab notebook](https://en.wikipedia.org/wiki/Lab_notebook) is a poweful idea. It helps you record your thoughts as you try different things. I keep lab notebooks for my customer work so I can look at what I was thinking.
 
 ## Why write in public
 
@@ -18,6 +18,6 @@ A few reasons:
 
 ## What to expect
 
-Short posts. Reading notes. The occasional longer piece when something crystallises. Expect rough edges.
+Short posts. Reading notes. Mostly my own words (with some AI help for communicating ideas and spelling). The occasional longer piece when something crystallises. Expect rough edges.
 
 If you want to chat about any of this, [leo@azl.au](mailto:leo@azl.au) is the easiest way to reach me.
