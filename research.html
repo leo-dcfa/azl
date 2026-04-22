@@ -1,0 +1,35 @@
+---
+layout: default
+title: Research
+description: Research notes and essays by Leo Alves — work-in-progress thinking tied to an ongoing PhD on AI, software engineering, and adjacent topics.
+permalink: /research/
+---
+<section class="research-hero">
+    <div class="container">
+        <p class="section-label">Research</p>
+        <h1>Notes and <em>works in progress</em></h1>
+        <p>Essays, reading notes, and half-formed ideas tied to an ongoing PhD. Expect rough edges — this is a thinking notebook, not a journal.</p>
+    </div>
+</section>
+
+<section class="research-list">
+    <div class="container">
+        {% assign articles = site.research | sort: "date" | reverse %}
+        {% if articles.size == 0 %}
+            <p class="research-empty">First article landing soon.</p>
+        {% else %}
+            {% for article in articles %}
+                <a href="{{ article.url }}" class="research-item">
+                    {% if article.date %}
+                    <p class="research-item-meta">
+                        <time datetime="{{ article.date | date_to_xmlschema }}">{{ article.date | date: "%b %-d, %Y" }}</time>
+                        {% if article.tags %} · {{ article.tags | join: " · " }}{% endif %}
+                    </p>
+                    {% endif %}
+                    <h2>{{ article.title }}</h2>
+                    {% if article.description %}<p>{{ article.description }}</p>{% endif %}
+                </a>
+            {% endfor %}
+        {% endif %}
+    </div>
+</section>
