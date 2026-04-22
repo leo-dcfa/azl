@@ -1,7 +1,7 @@
 ---
 title: Active Inference and Free Energy
 description:
-date: 2026-04-23 18:00:00 +1000
+date: 2026-04-23 06:00:00 +1000
 tags:
   - basics
   - ai-safety
