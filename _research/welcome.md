@@ -1,7 +1,7 @@
 ---
 title: A lab notebook
 description: Why a lab notebook
-date: 2026-04-22
+date: 2026-04-22 09:00:00 +1000
 tags:
   - meta
 ---
