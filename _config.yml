@@ -9,7 +9,7 @@ highlighter: rouge
 collections:
   research:
     output: true
-    permalink: /research/:slug/
+    permalink: /research-notes/:slug/
 
 defaults:
   - scope:
