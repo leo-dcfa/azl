@@ -529,17 +529,17 @@ footer {
     font-size: 0.85rem;
 }
 
-/* Research listing */
-.research-hero {
+/* Digital garden listing */
+.garden-hero {
     padding: 150px 3rem 4rem 3rem;
     background: var(--cream);
 }
 
-.research-hero .container {
+.garden-hero .container {
     max-width: 860px;
 }
 
-.research-hero h1 {
+.garden-hero h1 {
     font-family: var(--font-display);
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 400;
@@ -548,33 +548,33 @@ footer {
     color: var(--midnight);
 }
 
-.research-hero h1 em {
+.garden-hero h1 em {
     font-style: italic;
     color: var(--blue-700);
 }
 
-.research-hero p {
+.garden-hero p {
     font-size: 1.125rem;
     color: var(--slate);
     max-width: 620px;
 }
 
-.research-list {
+.garden-list {
     padding: 2rem 3rem 6rem 3rem;
     background: var(--cream);
 }
 
-.research-list .container {
+.garden-list .container {
     max-width: 860px;
 }
 
-.research-empty {
+.garden-empty {
     color: var(--slate);
     font-style: italic;
     padding: 2rem 0;
 }
 
-.research-item {
+.garden-item {
     display: block;
     padding: 2rem 0;
     border-top: 1px solid rgba(30, 90, 168, 0.12);
@@ -583,15 +583,15 @@ footer {
     transition: transform 0.2s;
 }
 
-.research-item:last-child {
+.garden-item:last-child {
     border-bottom: 1px solid rgba(30, 90, 168, 0.12);
 }
 
-.research-item:hover {
+.garden-item:hover {
     transform: translateX(4px);
 }
 
-.research-item-meta {
+.garden-item-meta {
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--blue-700);
@@ -600,7 +600,7 @@ footer {
     margin-bottom: 0.5rem;
 }
 
-.research-item h2 {
+.garden-item h2 {
     font-family: var(--font-display);
     font-size: 1.625rem;
     font-weight: 500;
@@ -609,11 +609,11 @@ footer {
     transition: color 0.2s;
 }
 
-.research-item:hover h2 {
+.garden-item:hover h2 {
     color: var(--blue-700);
 }
 
-.research-item p {
+.garden-item p {
     color: var(--slate);
     font-size: 1rem;
     max-width: 640px;
@@ -834,14 +834,14 @@ footer {
         text-align: center;
     }
 
-    .research-hero,
-    .research-list,
+    .garden-hero,
+    .garden-list,
     .article {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
 
-    .research-hero {
+    .garden-hero {
         padding-top: 120px;
     }
 

@@ -7,14 +7,14 @@ markdown: kramdown
 highlighter: rouge
 
 collections:
-  research:
+  garden:
     output: true
-    permalink: /research-notes/:year/:slug/
+    permalink: /digital-garden/:year/:slug/
 
 defaults:
   - scope:
       path: ""
-      type: research
+      type: garden
     values:
       layout: article
 
