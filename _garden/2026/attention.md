@@ -1,5 +1,5 @@
 ---
-title: attention
+title: Attention
 description:
 date: 2026-04-24 08:00:00 +1000
 tags:
