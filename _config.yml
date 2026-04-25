@@ -6,18 +6,6 @@ author: Leo Alves
 markdown: kramdown
 highlighter: rouge
 
-collections:
-  garden:
-    output: true
-    permalink: /digital-garden/:year/:slug/
-
-defaults:
-  - scope:
-      path: ""
-      type: garden
-    values:
-      layout: article
-
 exclude:
   - Gemfile
   - Gemfile.lock
