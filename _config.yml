@@ -2,9 +2,26 @@ title: Azul Labs
 description: Leo Alves — AI engineer and software consultant on the Sunshine Coast. AI consulting, Claude API integration, Salesforce, and Python backends.
 url: https://azl.au
 author: Leo Alves
+lang: en_AU
+logo: /assets/images/logo-icon-1024.png
+image: /assets/images/logo-icon-1024.png
+
+twitter:
+  card: summary
+
+social:
+  name: Leo Alves
+  links:
+    - https://www.linkedin.com/in/leofilipealves/
+    - https://github.com/leo-dcfa
 
 markdown: kramdown
 highlighter: rouge
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
 
 exclude:
   - Gemfile

@@ -3,22 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} | AI & Software Engineering Consultancy | Sunshine Coast{% endif %}</title>
-    <meta name="description" content="{{ page.description | default: site.description }}">
-    {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
-    <meta name="author" content="{{ site.author }}, Azul Labs">
     <meta name="robots" content="index, follow">
+    {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} | AI & Software Engineering | Sunshine Coast{% endif %}">
-    <meta property="og:description" content="{{ page.description | default: site.description }}">
-    <meta property="og:type" content="{{ page.og_type | default: 'website' }}">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-    <meta property="og:image" content="{{ site.url }}/assets/images/logo-icon-1024.png">
-    <meta property="og:locale" content="en_AU">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    {% seo %}
+    {% feed_meta %}
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
