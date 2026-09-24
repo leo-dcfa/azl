@@ -1,7 +1,11 @@
 - q: Can we use AI without sending our data to the cloud?
-  a: Yes. Open models are now good enough for a lot of business tasks. I can set one up on your own servers or cloud account with Ollama, vLLM or llama.cpp, so your data stays on your network.
+  a: Yes. Open models are now good enough for a lot of business tasks. I can set one up on your own servers with Ollama, vLLM or llama.cpp, so your data stays on your network.
+- q: Can you host a private model for us?
+  a: Yes. I run a mini data centre with plenty of capacity and host open models for clients, including ones fine-tuned on their data. Your prompts and documents aren't sent to OpenAI, Anthropic or any other AI company, and you don't need to buy any hardware.
 - q: What are evals, and do I need them?
   a: Evals are tests for an AI agent. They run it against real examples and score the answers, so you can tell whether a prompt change or a new model made things better or worse. If an agent talks to customers or makes decisions, you want them. I write mine with Pydantic Evals.
+- q: When is fine-tuning worth it?
+  a: When a good prompt and a few examples still don't get a model where it needs to be, or when you want a small model that does one job really well. I run evals on the base model and the tuned one, so you can see whether the tuning paid off.
 - q: Do you only work with Claude?
   a: No. About 25% of my work is handled by Claude and the other 75% by local models. Not every percent is equal, though. That 25% goes to the tasks local models can't handle yet.
 - q: Do you still do Salesforce and Python work?

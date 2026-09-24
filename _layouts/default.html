@@ -62,7 +62,7 @@
                 });
             }, { threshold: 0.1 });
 
-            document.querySelectorAll('.service-card, .step, .stat, .about-content').forEach((el, i) => {
+            document.querySelectorAll('.service-card, .hosting-point, .step, .stat, .about-content').forEach((el, i) => {
                 el.classList.add('reveal');
                 el.style.transitionDelay = `${(i % 3) * 80}ms`;
                 observer.observe(el);

@@ -1,8 +1,8 @@
 ---
 layout: home
 title: AI Engineer, Sunshine Coast · Local LLMs & Agent Evals
-description: Leo Alves is an AI engineer on the Sunshine Coast, QLD. Agents, local LLM setup, agent evals, Claude API, Python and Salesforce for startups and SMBs.
-keywords: AI consulting Sunshine Coast, AI engineer Queensland, Claude API integration, Anthropic AI developer, local LLM setup, self-hosted LLM, on-premise AI, Ollama, vLLM, llama.cpp, open-weight models, agent evals, LLM evaluation, AI agent testing, Salesforce developer Sunshine Coast, Python FastAPI development, Pydantic AI, LLM integration Australia, agentic AI, startup AI solutions, Southeast Queensland software consultant
+description: Leo Alves is an AI engineer on the Sunshine Coast, QLD. Agents, local LLMs, private hosting, fine-tuning, agent evals, Claude API, Python and Salesforce.
+keywords: AI consulting Sunshine Coast, AI engineer Queensland, Claude API integration, Anthropic AI developer, local LLM setup, self-hosted LLM, on-premise AI, private LLM hosting, private AI hosting, LLM fine-tuning, fine-tuning open models, Ollama, vLLM, llama.cpp, open-weight models, agent evals, LLM evaluation, AI agent testing, Salesforce developer Sunshine Coast, Python FastAPI development, Pydantic AI, LLM integration Australia, agentic AI, startup AI solutions, Southeast Queensland software consultant
 permalink: /
 ---
 <!-- Hero -->
@@ -12,7 +12,7 @@ permalink: /
             <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Taking on new projects<span class="eyebrow-loc"> · Sunshine Coast, QLD</span></p>
             <h1>Time to ride the <em>AI&nbsp;wave</em></h1>
             <p class="hero-sub">AI is everywhere now. Most of it is noise.</p>
-            <p class="hero-sub-2">I'm Leo, an AI engineer on the Sunshine Coast. I help startups and scale-ups figure out what's actually worth building, and then build it. Lately that's mostly agents, local models and evals.</p>
+            <p class="hero-sub-2">I'm Leo, an AI engineer on the Sunshine Coast. I help startups and scale-ups figure out what's actually worth building, and then build it. Lately that's mostly agents, local and fine-tuned models, and evals. I also run a mini data centre, so I can host private models for you.</p>
             <div class="hero-actions">
                 <a href="#contact" class="btn btn-primary">
                     Start a project
@@ -111,9 +111,25 @@ permalink: /
             <article class="service-card">
                 <div class="service-head">
                     <div class="service-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>
                     </div>
                     <span class="service-num">03</span>
+                </div>
+                <h3>Fine-tuning</h3>
+                <p>When a good prompt isn't enough, I fine-tune open models on your data so they learn your domain, your formats and your tone. Evals before and after show whether the tuned model is actually better.</p>
+                <div class="service-tags">
+                    <span class="service-tag">Open-weight Models</span>
+                    <span class="service-tag">Custom Datasets</span>
+                    <span class="service-tag">Before/After Evals</span>
+                </div>
+            </article>
+
+            <article class="service-card">
+                <div class="service-head">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                    </div>
+                    <span class="service-num">04</span>
                 </div>
                 <h3>Evals for Agents</h3>
                 <p>Changed a prompt or swapped models and not sure if it helped? I write evals for agents so you can check. Test cases come from real conversations and run in CI like any other test.</p>
@@ -130,7 +146,7 @@ permalink: /
                     <div class="service-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                     </div>
-                    <span class="service-num">04</span>
+                    <span class="service-num">05</span>
                 </div>
                 <h3>Python Backend Dev</h3>
                 <p>FastAPI and Pydantic are my go-to stack. Clean, fast, and easy to maintain. I build backends that don't fall over when you actually start using them.</p>
@@ -146,7 +162,7 @@ permalink: /
                     <div class="service-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.78A6 6 0 0 0 4.5 12.5 3.5 3.5 0 0 0 6 19h11.5z"/></svg>
                     </div>
-                    <span class="service-num">05</span>
+                    <span class="service-num">06</span>
                 </div>
                 <h3>Salesforce &amp; DevOps</h3>
                 <p>Apex, Lightning, CI/CD, infrastructure as code. If your Salesforce deployment pipeline needs work, I can help.</p>
@@ -158,6 +174,39 @@ permalink: /
                 </div>
             </article>
         </div>
+    </div>
+</section>
+
+<!-- Private hosting -->
+<section class="hosting" id="hosting">
+    <div class="container hosting-grid">
+        <div class="hosting-copy">
+            <p class="section-label">Private hosting</p>
+            <h2>Run private models on <em>my hardware</em></h2>
+            <p>I run a mini data centre with plenty of capacity, so you can use private AI without buying and running your own servers. I host open models for clients, including models fine-tuned on their own data.</p>
+            <a href="mailto:leo@azl.au?subject=Private%20hosting" class="btn btn-light">
+                Ask about hosting
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9H14M14 9L9.5 4.5M14 9L9.5 13.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+        <ul class="hosting-points">
+            <li class="hosting-point">
+                <h3>Your data stays private</h3>
+                <p>Prompts and documents aren't sent to OpenAI, Anthropic or any other AI company.</p>
+            </li>
+            <li class="hosting-point">
+                <h3>No servers to buy</h3>
+                <p>You don't need to buy hardware or find someone to look after it.</p>
+            </li>
+            <li class="hosting-point">
+                <h3>Checked with evals</h3>
+                <p>Before anything goes live, evals show how the model handles your real tasks.</p>
+            </li>
+            <li class="hosting-point">
+                <h3>Move it in-house later</h3>
+                <p>If you'd rather own the setup down the track, I can move it onto your hardware.</p>
+            </li>
+        </ul>
     </div>
 </section>
 
@@ -212,13 +261,14 @@ permalink: /
                 <p class="section-label">About</p>
                 <h2>Hi, I'm Leo</h2>
                 <p>I've been building software for 15 years: AWS, Salesforce, Python, and more recently, a lot of AI work with Claude and other LLMs. I run Azul Labs from the Sunshine Coast.</p>
-                <p>Lately a lot of that is setting up local models for teams that need to keep data in-house, and writing evals for agents before they go live.</p>
+                <p>Lately a lot of that is setting up and fine-tuning local models for teams that need to keep data in-house, and writing evals for agents before they go live.</p>
                 <p>I work best with startups and scale-ups that have a real problem to solve. If you need someone to build something that works and explain it in plain English, that's what I do.</p>
                 <div class="tech-stack">
                     <span class="tech-tag">Claude</span>
                     <span class="tech-tag">Anthropic</span>
                     <span class="tech-tag">Pydantic AI</span>
                     <span class="tech-tag">Local LLMs</span>
+                    <span class="tech-tag">Fine-tuning</span>
                     <span class="tech-tag">Evals</span>
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">FastAPI</span>
