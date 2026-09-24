@@ -6,6 +6,8 @@
   a: Evals are tests for an AI agent. They run it against real examples and score the answers, so you can tell whether a prompt change or a new model made things better or worse. If an agent talks to customers or makes decisions, you want them. I write mine with Pydantic Evals.
 - q: When is fine-tuning worth it?
   a: When a good prompt and a few examples still don't get a model where it needs to be, or when you want a small model that does one job really well. I run evals on the base model and the tuned one, so you can see whether the tuning paid off.
+- q: Who owns what you build?
+  a: You do. Code, prompts, datasets, evals and any fine-tuned models are handed over to you. Open models come with their own licences, so I check those fit how you plan to use them.
 - q: Do you only work with Claude?
   a: No. About 25% of my work is handled by Claude and the other 75% by local models. Not every percent is equal, though. That 25% goes to the tasks local models can't handle yet.
 - q: Do you still do Salesforce and Python work?

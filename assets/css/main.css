@@ -727,6 +727,52 @@ nav.scrolled {
     font-size: 0.95rem;
 }
 
+/* Ownership */
+.own {
+    padding: 7rem 3rem;
+    background: var(--cream);
+}
+
+.own .section-title {
+    margin-bottom: 1.25rem;
+}
+
+.own .section-title em {
+    color: var(--blue-700);
+}
+
+.own-lede {
+    max-width: 680px;
+    color: var(--slate);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.own-points {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.own-point {
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--blue-700);
+}
+
+.own-point:nth-child(2) { border-top-color: var(--blue-500); }
+.own-point:nth-child(3) { border-top-color: var(--blue-300); }
+
+.own-point h3 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.own-point p {
+    color: var(--slate);
+}
+
 /* Approach */
 .approach {
     padding: 7rem 3rem;
@@ -1164,7 +1210,7 @@ footer {
         padding: 0.75rem 1rem;
     }
 
-    .hero, .services, .hosting, .approach, .about, .faq, .contact {
+    .hero, .services, .own, .hosting, .approach, .about, .faq, .contact {
         padding: 4rem 1.25rem;
     }
 
@@ -1189,6 +1235,7 @@ footer {
     }
 
     .services-grid,
+    .own-points,
     .steps {
         grid-template-columns: 1fr;
     }

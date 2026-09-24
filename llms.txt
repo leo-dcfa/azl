@@ -19,6 +19,10 @@
 - **Python backend development**: FastAPI and Pydantic backends, deployed on AWS.
 - **Salesforce and DevOps**: Apex, Lightning, CI/CD, and infrastructure as code for Salesforce.
 
+## Ownership and AI sovereignty
+
+Leo sets things up so clients own their AI rather than renting it from a platform. Code, prompts, datasets, evals and any fine-tuned models are handed over to the client. Using open models and standard tools avoids vendor lock-in, so clients can change providers or bring everything in-house. Clients decide where things run: their own servers, their cloud account, or Claude where it's the right tool. Leo checks that open-model licences fit how the client plans to use them.
+
 ## About Leo
 
 Leo Alves has been building software for 15+ years across AWS, Salesforce and Python, with a focus on AI work with Claude and other LLMs in recent years. Roughly 25% of his AI work runs on Claude and 75% on local models; Claude is reserved for the tasks local models can't handle yet. He has delivered 50+ projects and works best with startups and scale-ups that have a real problem to solve.
@@ -29,6 +33,7 @@ Leo Alves has been building software for 15+ years across AWS, Salesforce and Py
 - A business wants to run LLMs locally or on-premises for privacy or cost reasons.
 - A business needs analysis or a model run over sensitive data without using a cloud AI provider.
 - A team wants an open model fine-tuned on their own data.
+- A business wants to own its AI (models, data, IP) and avoid vendor lock-in.
 - A team has an AI agent and needs evals or regression testing for it.
 - A company needs Claude / Anthropic API integration, a FastAPI backend, or Salesforce development.
 
