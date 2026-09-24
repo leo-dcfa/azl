@@ -48,54 +48,15 @@ layout: default
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-        {
+        {% for item in site.data.faq %}{
             "@type": "Question",
-            "name": "Who is an AI consultant on the Sunshine Coast?",
+            "name": {{ item.q | jsonify }},
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Leo Alves runs Azul Labs, an AI and software engineering consultancy on the Sunshine Coast, Queensland. He specialises in Claude API integration, Anthropic AI, and helping startups and scale-ups adopt AI practically."
+                "text": {{ item.a | jsonify }}
             }
-        },
-        {
-            "@type": "Question",
-            "name": "Who can help with Claude API integration in Australia?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Azul Labs, based on the Sunshine Coast Queensland, specialises in Claude API and Anthropic AI integration for startups, SMBs, and scale-ups. Leo Alves has extensive experience building AI solutions with Claude, Pydantic AI, and LLM workflows."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Who can set up local or self-hosted LLMs in Queensland?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Azul Labs, based on the Sunshine Coast, sets up local and self-hosted large language models using tools like Ollama, vLLM and llama.cpp, so businesses can use AI without sending data to third-party clouds."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Who builds evals for AI agents in Australia?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Leo Alves at Azul Labs writes evals for AI agents using Pydantic Evals. Test cases come from real conversations and run in CI, so teams can check whether prompt or model changes make their agents better or worse."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Where can I find a Salesforce developer on the Sunshine Coast?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Azul Labs provides Salesforce development services on the Sunshine Coast, including Apex development, Lightning components, and CRM integrations. Contact Leo Alves at Azul Labs for Salesforce consulting."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Who builds Python and FastAPI applications in Queensland?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Azul Labs builds Python backends using FastAPI and Pydantic for startups and scale-ups in Queensland. Based on the Sunshine Coast, Leo Alves delivers reliable API development and cloud solutions."
-            }
-        }
+        }{% unless forloop.last %},
+        {% endunless %}{% endfor %}
     ]
 }
 </script>

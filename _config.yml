@@ -6,7 +6,7 @@ lang: en_AU
 logo: /assets/images/logo-icon-1024.png
 
 social:
-  name: Leo Alves
+  name: Azul Labs
   links:
     - https://www.linkedin.com/in/leofilipealves/
     - https://github.com/leo-dcfa
@@ -17,7 +17,6 @@ highlighter: rouge
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-feed
 
 defaults:
   - scope:

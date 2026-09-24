@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,6 @@
     {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
 
     {% seo %}
-    {% feed_meta %}
     <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-friendly summary">
 
     <!-- Favicon -->
@@ -24,9 +23,10 @@
     {% if page.structured_data %}{{ page.structured_data }}{% endif %}
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     {% include nav.html %}
 
-    <main>
+    <main id="main">
         {{ content }}
     </main>
 
