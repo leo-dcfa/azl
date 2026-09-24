@@ -3,7 +3,7 @@
 - q: What are evals, and do I need them?
   a: Evals are tests for an AI agent. They run it against real examples and score the answers, so you can tell whether a prompt change or a new model made things better or worse. If an agent talks to customers or makes decisions, you want them. I write mine with Pydantic Evals.
 - q: Do you only work with Claude?
-  a: No. I use Claude a lot, but I also work with open models and other LLMs. I'll pick whatever fits your budget and how sensitive your data is.
+  a: No. About 25% of my work is handled by Claude and the other 75% by local models. Not every percent is equal, though. That 25% goes to the tasks local models can't handle yet.
 - q: Do you still do Salesforce and Python work?
   a: Yes. Apex, Lightning, CI/CD and deployment pipelines on the Salesforce side, and FastAPI and Pydantic backends on AWS for Python.
 - q: Where are you based?
