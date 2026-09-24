@@ -362,9 +362,14 @@ nav.scrolled {
 .eval-cmd {
     color: var(--white);
     margin-bottom: 1.1rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    padding-left: 1rem;
+    text-indent: -1rem;
+}
+
+.eval-reply {
+    color: rgba(255, 255, 255, 0.6);
+    margin: -0.6rem 0 1.1rem;
+    padding-left: 1rem;
 }
 
 .eval-cmd .prompt { color: var(--blue-300); margin-right: 0.25rem; }

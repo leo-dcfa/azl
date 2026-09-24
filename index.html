@@ -23,12 +23,14 @@ permalink: /
         </div>
 
         <div class="hero-visual">
-            <figure class="eval-card" aria-label="Illustrative example: an agent eval run against a locally hosted model">
+            <figure class="eval-card" aria-label="Illustrative example: chatting with an agent on a local model using clai, then running its evals">
                 <div class="eval-card-bar">
                     <span class="eval-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-                    <span class="eval-card-title">evals / support_agent</span>
+                    <span class="eval-card-title">support_agent</span>
                 </div>
                 <div class="eval-card-body">
+                    <p class="eval-cmd"><span class="prompt">$</span> uvx clai <span class="flag">-a</span> support_agent:agent <span class="flag">-m</span> ollama:qwen3 "Where's order 4417?"</p>
+                    <p class="eval-reply">Order 4417 shipped on Tuesday and should arrive Friday.</p>
                     <p class="eval-cmd"><span class="prompt">$</span> uv run evals/support_agent.py</p>
                     <ul class="eval-rows">
                         <li style="--score: 96%"><span class="eval-ok">✓</span><span class="eval-name">tool_selection</span><span class="eval-meter"><span></span></span><span class="eval-score">96%</span></li>
