@@ -26,10 +26,10 @@ permalink: /
             <figure class="eval-card" aria-label="Illustrative example: an agent eval run against a locally hosted model">
                 <div class="eval-card-bar">
                     <span class="eval-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-                    <span class="eval-card-title">evals / support-agent</span>
+                    <span class="eval-card-title">evals / support_agent</span>
                 </div>
                 <div class="eval-card-body">
-                    <p class="eval-cmd"><span class="prompt">$</span> azl eval run support-agent <span class="flag">--model</span> local/open-weights-32b</p>
+                    <p class="eval-cmd"><span class="prompt">$</span> pytest evals/support_agent <span class="flag">-q</span></p>
                     <ul class="eval-rows">
                         <li style="--score: 96%"><span class="eval-ok">✓</span><span class="eval-name">tool_selection</span><span class="eval-meter"><span></span></span><span class="eval-score">96%</span></li>
                         <li style="--score: 92%"><span class="eval-ok">✓</span><span class="eval-name">grounded_answers</span><span class="eval-meter"><span></span></span><span class="eval-score">92%</span></li>
