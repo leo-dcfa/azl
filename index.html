@@ -1,53 +1,65 @@
 ---
 layout: home
 title: null
-description: Leo Alves is an AI engineer and software consultant on the Sunshine Coast, Queensland. Specialising in Claude API integration, Anthropic AI, Salesforce development, Python, FastAPI and Pydantic for startups, SMBs, and scale-ups.
-keywords: AI consulting Sunshine Coast, AI engineer Queensland, Claude API integration, Anthropic AI developer, Salesforce developer Sunshine Coast, Python FastAPI development, Pydantic AI, LLM integration Australia, agentic AI, software engineering SMB, startup AI solutions, scale-up AI solutions, Brisbane area developer, Southeast Queensland software consultant
+description: Leo Alves is an AI engineer and software consultant on the Sunshine Coast, Queensland. AI adoption, agents, local and self-hosted LLMs, agent evals, Claude API integration, Python, FastAPI and Salesforce for startups, SMBs, and scale-ups.
+keywords: AI consulting Sunshine Coast, AI engineer Queensland, Claude API integration, Anthropic AI developer, local LLM setup, self-hosted LLM, on-premise AI, Ollama, vLLM, llama.cpp, open-weight models, agent evals, LLM evaluation, AI agent testing, Salesforce developer Sunshine Coast, Python FastAPI development, Pydantic AI, LLM integration Australia, agentic AI, startup AI solutions, Southeast Queensland software consultant
 permalink: /
 ---
 <!-- Hero -->
-<section class="hero" itemscope itemtype="https://schema.org/Organization">
+<section class="hero">
     <div class="hero-grid">
-        <div>
+        <div class="hero-copy">
+            <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Taking on new projects<span class="eyebrow-loc"> · Sunshine Coast, QLD</span></p>
             <h1>Time to ride the <em>AI&nbsp;wave</em></h1>
             <p class="hero-sub">AI is everywhere now. Most of it is noise.</p>
-            <p class="hero-sub-2">I help startups and scale-ups figure out what's actually worth building—and then build it.</p>
-            <a href="#contact" class="hero-cta">
-                Start a project
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9H14M14 9L9.5 4.5M14 9L9.5 13.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-        </div>
-        <div class="hero-visual">
-            <div class="tile-grid" role="img" aria-label="Service icons representing AI, Salesforce, Python, and cloud technologies">
-                <div class="tile">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                </div>
-                <div class="tile">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-                </div>
-                <div class="tile">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <div class="tile">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                </div>
-                <div class="tile">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                </div>
-                <div class="tile">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                </div>
-                <div class="tile">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-                </div>
-                <div class="tile">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-                </div>
-                <div class="tile">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-                </div>
+            <p class="hero-sub-2">I help startups and scale-ups figure out what's actually worth building, then build it: agents on Claude or on local models running on your own hardware, with evals that prove they work.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary">
+                    Start a project
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9H14M14 9L9.5 4.5M14 9L9.5 13.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="#services" class="btn btn-ghost">What I do</a>
             </div>
         </div>
+
+        <div class="hero-visual">
+            <figure class="eval-card" aria-label="Illustrative example: an agent eval run against a locally hosted model">
+                <div class="eval-card-bar">
+                    <span class="eval-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                    <span class="eval-card-title">evals / support-agent</span>
+                </div>
+                <div class="eval-card-body">
+                    <p class="eval-cmd"><span class="prompt">$</span> azl eval run support-agent <span class="flag">--model</span> local/open-weights-32b</p>
+                    <ul class="eval-rows">
+                        <li style="--score: 96%"><span class="eval-ok">✓</span><span class="eval-name">tool_selection</span><span class="eval-meter"><span></span></span><span class="eval-score">96%</span></li>
+                        <li style="--score: 92%"><span class="eval-ok">✓</span><span class="eval-name">grounded_answers</span><span class="eval-meter"><span></span></span><span class="eval-score">92%</span></li>
+                        <li style="--score: 82%" class="warn"><span class="eval-ok">!</span><span class="eval-name">refund_policy</span><span class="eval-meter"><span></span></span><span class="eval-score">82%</span></li>
+                        <li style="--score: 100%"><span class="eval-ok">✓</span><span class="eval-name">escalation</span><span class="eval-meter"><span></span></span><span class="eval-score">100%</span></li>
+                    </ul>
+                    <p class="eval-summary">
+                        <span><b>92.5%</b> pass</span>
+                        <span><b>1.8s</b> p50</span>
+                        <span><b>on-prem</b> no data leaves</span>
+                    </p>
+                </div>
+            </figure>
+            <div class="hero-tiles" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        </div>
+    </div>
+
+    <div class="stack-strip">
+        <p class="stack-label">Works with</p>
+        <ul class="stack-list">
+            <li>Claude</li>
+            <li>Anthropic API</li>
+            <li>Pydantic AI</li>
+            <li>Ollama</li>
+            <li>vLLM</li>
+            <li>llama.cpp</li>
+            <li>FastAPI</li>
+            <li>Salesforce</li>
+            <li>AWS</li>
+        </ul>
     </div>
 </section>
 
@@ -59,11 +71,14 @@ permalink: /
 
         <div class="services-grid">
             <article class="service-card featured">
-                <div class="service-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <div class="service-head">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <span class="service-num">01</span>
                 </div>
-                <h3>AI Adoption</h3>
-                <p>Most AI advice is hype. I help you figure out where AI actually makes sense for your business, build the integration, and show your team how to use it. Claude, APIs, workflow automation.</p>
+                <h3>AI Adoption &amp; Agents</h3>
+                <p>Most AI advice is hype. I help you figure out where AI actually makes sense for your business, build the integration or agent, and show your team how to use it. Claude, APIs, workflow automation.</p>
                 <div class="service-tags">
                     <span class="service-tag">Claude Code</span>
                     <span class="service-tag">Anthropic</span>
@@ -74,8 +89,44 @@ permalink: /
             </article>
 
             <article class="service-card">
-                <div class="service-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <div class="service-head">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01"/></svg>
+                    </div>
+                    <span class="service-num">02</span>
+                </div>
+                <h3>Local Models</h3>
+                <p>Private, self-hosted LLMs. I pick the right open-weight model for the job, set it up on your hardware or your cloud, and wire it into your apps. Your data stays where it is.</p>
+                <div class="service-tags">
+                    <span class="service-tag">Ollama</span>
+                    <span class="service-tag">vLLM</span>
+                    <span class="service-tag">llama.cpp</span>
+                    <span class="service-tag">On-prem</span>
+                </div>
+            </article>
+
+            <article class="service-card">
+                <div class="service-head">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                    </div>
+                    <span class="service-num">03</span>
+                </div>
+                <h3>Evals for Agents</h3>
+                <p>You can't improve what you don't measure. I build eval suites for your agents: test cases from real usage, graders, and regression checks in CI. You'll know when a prompt tweak or model swap makes things better or worse.</p>
+                <div class="service-tags">
+                    <span class="service-tag">Agent Evals</span>
+                    <span class="service-tag">LLM-as-judge</span>
+                    <span class="service-tag">Regression Tests</span>
+                </div>
+            </article>
+
+            <article class="service-card">
+                <div class="service-head">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <span class="service-num">04</span>
                 </div>
                 <h3>Python Backend Dev</h3>
                 <p>FastAPI and Pydantic are my go-to stack. Clean, fast, and easy to maintain. I build backends that don't fall over when you actually start using them.</p>
@@ -87,10 +138,13 @@ permalink: /
             </article>
 
             <article class="service-card">
-                <div class="service-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                <div class="service-head">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.78A6 6 0 0 0 4.5 12.5 3.5 3.5 0 0 0 6 19h11.5z"/></svg>
+                    </div>
+                    <span class="service-num">05</span>
                 </div>
-                <h3>Salesforce & DevOps</h3>
+                <h3>Salesforce &amp; DevOps</h3>
                 <p>Apex, Lightning, CI/CD, infrastructure as code. If your Salesforce deployment pipeline needs work, I can help.</p>
                 <div class="service-tags">
                     <span class="service-tag">Apex</span>
@@ -100,6 +154,31 @@ permalink: /
                 </div>
             </article>
         </div>
+    </div>
+</section>
+
+<!-- Approach -->
+<section class="approach" id="approach">
+    <div class="container">
+        <p class="section-label">Approach</p>
+        <h2 class="section-title">How a project usually goes</h2>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <h3>Work out what's worth it</h3>
+                <p>A short, honest look at your problem. Sometimes the answer is an agent. Sometimes it's a spreadsheet. I'll tell you which.</p>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <h3>Build the real thing</h3>
+                <p>A working version early, then a proper integration. On Claude, on local models, or both, depending on cost and privacy.</p>
+            </li>
+            <li class="step">
+                <span class="step-num">3</span>
+                <h3>Prove it works</h3>
+                <p>Evals you can re-run, a handover your team understands, and no black boxes left behind.</p>
+            </li>
+        </ol>
     </div>
 </section>
 
@@ -129,14 +208,16 @@ permalink: /
                 <p class="section-label">About</p>
                 <h2>Hi, I'm Leo</h2>
                 <p>I've been building software for 15 years: AWS, Salesforce, Python, and more recently, a lot of AI work with Claude and other LLMs. I run Azul Labs from the Sunshine Coast.</p>
+                <p>These days that includes setting up local models for teams who can't send their data to the cloud, and writing evals so agents can be trusted in production.</p>
                 <p>I work best with startups and scale-ups that have a real problem to solve. If you need someone to build something that works and explain it in plain English, that's what I do.</p>
                 <div class="tech-stack">
                     <span class="tech-tag">Claude</span>
                     <span class="tech-tag">Anthropic</span>
                     <span class="tech-tag">Pydantic AI</span>
+                    <span class="tech-tag">Local LLMs</span>
+                    <span class="tech-tag">Evals</span>
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">FastAPI</span>
-                    <span class="tech-tag">Pydantic</span>
                     <span class="tech-tag">Salesforce</span>
                     <span class="tech-tag">AWS</span>
                 </div>
@@ -149,10 +230,10 @@ permalink: /
 <section class="contact" id="contact">
     <div class="contact-inner">
         <h2>Let's <em>talk</em></h2>
-        <p>Got a project in mind? Need advice on AI adoption or a Salesforce challenge? I'm happy to chat.</p>
+        <p>Got a project in mind? Want to run models locally, find out if your agent actually works, or sort out a Salesforce challenge? I'm happy to chat.</p>
         <a href="mailto:leo@azl.au" class="contact-btn">
             leo@azl.au
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9H14M14 9L9.5 4.5M14 9L9.5 13.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9H14M14 9L9.5 4.5M14 9L9.5 13.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <div class="contact-details">
             <div class="contact-item">
@@ -162,6 +243,10 @@ permalink: /
             <div class="contact-item">
                 <p class="contact-item-label">Business</p>
                 <p>Azul Labs Pty Ltd</p>
+            </div>
+            <div class="contact-item">
+                <p class="contact-item-label">Elsewhere</p>
+                <p><a href="https://www.linkedin.com/in/leofilipealves/">LinkedIn</a> · <a href="https://github.com/leo-dcfa">GitHub</a></p>
             </div>
         </div>
     </div>

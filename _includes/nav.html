@@ -1,10 +1,14 @@
-<nav>
+<nav id="site-nav">
     <a href="/" class="logo" aria-label="Azul Labs Home">
         <div class="logo-mark">{% include logo-mark.html %}</div>
         <span class="logo-text">Azul <span>Labs</span></span>
     </a>
-    <ul class="nav-links">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="nav-links" id="nav-links">
         <li><a href="/#services">Services</a></li>
+        <li><a href="/#approach">Approach</a></li>
         <li><a href="/#about">About</a></li>
         <li><a href="/#contact" class="nav-cta">Get in Touch</a></li>
     </ul>
