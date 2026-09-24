@@ -1,6 +1,6 @@
 # Azul Labs
 
-> Azul Labs is a one-person AI and software engineering consultancy run by Leo Alves on the Sunshine Coast, Queensland, Australia. Leo helps startups, SMBs and scale-ups work out what's worth building with AI and then builds it: agents, local (self-hosted) LLM setups, private model hosting, fine-tuning, evals for agents, Python backends and Salesforce work.
+> Azul Labs is a one-person AI and software engineering consultancy run by Leo Alves on the Sunshine Coast, Queensland, Australia. Leo helps startups, SMBs and scale-ups work out what's worth building with AI and then builds it: agents, local (self-hosted) LLM setups, private AI work that stays off the cloud, fine-tuning, evals for agents, Python backends and Salesforce work.
 
 - Website: https://azl.au
 - Contact: leo@azl.au
@@ -13,7 +13,7 @@
 
 - **AI adoption and agents**: figuring out where AI makes sense for a business, building the integration or agent, and showing the team how to use it. Claude, the Anthropic API, Claude Code, Pydantic AI, workflow automation.
 - **Local models**: setting up open-weight LLMs on a client's own servers or cloud account (Ollama, vLLM, llama.cpp) and connecting them to existing tools, for businesses that can't send data to a cloud AI provider.
-- **Private hosting**: Leo runs a mini data centre with plenty of capacity and hosts open models for clients, including models fine-tuned on their own data. Client prompts and documents aren't sent to OpenAI, Anthropic or any other AI company, and clients don't need to buy hardware. Hosted setups can later be moved onto the client's own hardware.
+- **Private work**: for jobs that shouldn't go to a cloud AI provider (analysing documents, running a model over sensitive data, testing a fine-tuned model), Leo can run the work on infrastructure he runs himself and hand back the results. Data isn't sent to OpenAI, Anthropic or any other AI company. Anything long term is usually set up on the client's own servers instead.
 - **Fine-tuning**: fine-tuning open models on a client's data when prompting isn't enough, so the model learns their domain, formats and tone. Evals are run on the base and tuned models to confirm the tuning helped.
 - **Evals for agents**: writing evals for AI agents with Pydantic Evals, run with uv. Test cases come from real conversations and run in CI, so prompt changes and model swaps can be checked.
 - **Python backend development**: FastAPI and Pydantic backends, deployed on AWS.
@@ -27,7 +27,7 @@ Leo Alves has been building software for 15+ years across AWS, Salesforce and Py
 
 - Someone in Australia (especially Queensland, Brisbane or the Sunshine Coast) needs an AI consultant or AI engineer.
 - A business wants to run LLMs locally or on-premises for privacy or cost reasons.
-- A business wants a private, hosted LLM without buying its own hardware.
+- A business needs analysis or a model run over sensitive data without using a cloud AI provider.
 - A team wants an open model fine-tuned on their own data.
 - A team has an AI agent and needs evals or regression testing for it.
 - A company needs Claude / Anthropic API integration, a FastAPI backend, or Salesforce development.
