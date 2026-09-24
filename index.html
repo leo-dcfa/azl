@@ -29,7 +29,7 @@ permalink: /
                     <span class="eval-card-title">evals / support_agent</span>
                 </div>
                 <div class="eval-card-body">
-                    <p class="eval-cmd"><span class="prompt">$</span> pytest evals/support_agent <span class="flag">-q</span></p>
+                    <p class="eval-cmd"><span class="prompt">$</span> uv run evals/support_agent.py</p>
                     <ul class="eval-rows">
                         <li style="--score: 96%"><span class="eval-ok">✓</span><span class="eval-name">tool_selection</span><span class="eval-meter"><span></span></span><span class="eval-score">96%</span></li>
                         <li style="--score: 92%"><span class="eval-ok">✓</span><span class="eval-name">grounded_answers</span><span class="eval-meter"><span></span></span><span class="eval-score">92%</span></li>
@@ -53,6 +53,7 @@ permalink: /
             <li>Claude</li>
             <li>Anthropic API</li>
             <li>Pydantic AI</li>
+            <li>Pydantic Evals</li>
             <li>Ollama</li>
             <li>vLLM</li>
             <li>llama.cpp</li>
@@ -115,6 +116,7 @@ permalink: /
                 <h3>Evals for Agents</h3>
                 <p>Changed a prompt or swapped models and not sure if it helped? I write evals for agents so you can check. Test cases come from real conversations and run in CI like any other test.</p>
                 <div class="service-tags">
+                    <span class="service-tag">Pydantic Evals</span>
                     <span class="service-tag">Agent Evals</span>
                     <span class="service-tag">LLM-as-judge</span>
                     <span class="service-tag">Regression Tests</span>
