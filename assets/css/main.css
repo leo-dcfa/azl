@@ -280,8 +280,8 @@ nav.scrolled {
     flex-wrap: wrap;
 }
 
-/* Hero visual: one picture laid across a 4 x 4 tile panel.
-   The grout lines are the top two background layers; the sun and the wave sit under them. */
+/* Hero visual: four tiles, one per kind of work. Same 2 x 2 as the logo.
+   They are laid one after another on load; each motif moves a little on hover. */
 .hero-visual {
     display: flex;
     justify-content: flex-end;
@@ -290,19 +290,68 @@ nav.scrolled {
 .tile-panel {
     width: 100%;
     max-width: 480px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--grout);
+}
+
+.tile {
+    position: relative;
     aspect-ratio: 1;
     border-radius: var(--radius);
     overflow: hidden;
-    background-color: var(--white);
-    background-image:
-        linear-gradient(90deg, var(--cream) 0 4px, transparent 4px calc(100% - 4px), var(--cream) calc(100% - 4px)),
-        linear-gradient(0deg, var(--cream) 0 4px, transparent 4px calc(100% - 4px), var(--cream) calc(100% - 4px)),
-        radial-gradient(50% 50% at 87.5% 12.5%, var(--gold) 0 15%, transparent 15.5%),
-        radial-gradient(100% 100% at 0% 100%,
-            var(--blue-900) 0 28%,
-            var(--blue-700) 28.3% 46%,
-            var(--blue-300) 46.3% 62%, transparent 62.3%);
-    background-size: 25% 25%, 25% 25%, auto, auto;
+    background: var(--white);
+    color: var(--slate);
+    animation: lay 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.tile:nth-child(2) { animation-delay: 0.12s; }
+.tile:nth-child(3) { animation-delay: 0.24s; }
+.tile:nth-child(4) { animation-delay: 0.36s; }
+
+.tile-claude { background: var(--blue-900); color: #C9D8EA; }
+.tile-python { background: var(--blue-700); color: var(--blue-100); }
+
+.tile svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.tile figcaption {
+    position: absolute;
+    left: 1rem;
+    bottom: 0.8rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+}
+
+/* Motifs turn about the centre of their own artwork (50, 46 in a 100-unit tile) */
+.tile svg .orbit,
+.tile svg .spin,
+.tile svg .hooks,
+.tile svg .core {
+    transform-box: view-box;
+    transform-origin: 50% 46%;
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.tile svg .orbit {
+    animation: orbit 16s linear infinite;
+}
+
+.tile:hover svg .spin { transform: rotate(45deg); }
+.tile:hover svg .hooks { transform: rotate(180deg); }
+.tile:hover svg .core { transform: scale(1.5); }
+
+@keyframes lay {
+    from { opacity: 0; transform: translateY(14px) scale(0.96); }
+    to { opacity: 1; transform: none; }
+}
+
+@keyframes orbit {
+    to { transform: rotate(360deg); }
 }
 
 /* The four-tile mark, used on the 404 page */
