@@ -10,9 +10,9 @@ permalink: /
     <div class="hero-grid">
         <div class="hero-copy">
             <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Taking on new projects<span class="eyebrow-loc"> · Sunshine Coast, QLD</span></p>
-            <h1>Time to ride the <em>AI&nbsp;wave</em></h1>
-            <p class="hero-sub">AI is everywhere now. Most of it is noise.</p>
-            <p class="hero-sub-2">I'm Leo, an AI engineer on the Sunshine Coast. I help startups and scale-ups figure out what's actually worth building, and then build it. Lately that's mostly agents, local and fine-tuned models, and evals. And when data can't go to the cloud, I can run the work privately for you.</p>
+            <h1>AI, laid <em>tile&nbsp;by&nbsp;tile</em></h1>
+            <p class="hero-sub">Azul Labs is named for azulejos: glazed tiles that are plain one at a time, and a picture once they’re laid.</p>
+            <p class="hero-sub-2">I’m Leo, an AI engineer on the Sunshine Coast, and I build AI the same way. Agents, local and fine-tuned models, and evals, each piece small enough to check and yours to keep. I help startups and scale-ups figure out what’s actually worth building, and then build it. And when data can’t go to the cloud, I can run the work privately for you.</p>
             <div class="hero-actions">
                 <a href="#contact" class="btn btn-primary">
                     Start a project
@@ -23,29 +23,7 @@ permalink: /
         </div>
 
         <div class="hero-visual">
-            <figure class="eval-card" aria-label="Illustrative example: chatting with an agent on a local model using clai, then running its evals">
-                <div class="eval-card-bar">
-                    <span class="eval-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-                    <span class="eval-card-title">support_agent</span>
-                </div>
-                <div class="eval-card-body">
-                    <p class="eval-cmd"><span class="prompt">$</span> uvx clai <span class="flag">-a</span> support_agent:agent <span class="flag">-m</span> ollama:qwen3 "Where's order 4417?"</p>
-                    <p class="eval-reply">Order 4417 shipped on Tuesday and should arrive Friday.</p>
-                    <p class="eval-cmd"><span class="prompt">$</span> uv run evals/support_agent.py</p>
-                    <ul class="eval-rows">
-                        <li style="--score: 96%"><span class="eval-ok">✓</span><span class="eval-name">tool_selection</span><span class="eval-meter"><span></span></span><span class="eval-score">96%</span></li>
-                        <li style="--score: 92%"><span class="eval-ok">✓</span><span class="eval-name">grounded_answers</span><span class="eval-meter"><span></span></span><span class="eval-score">92%</span></li>
-                        <li style="--score: 82%" class="warn"><span class="eval-ok">!</span><span class="eval-name">refund_policy</span><span class="eval-meter"><span></span></span><span class="eval-score">82%</span></li>
-                        <li style="--score: 100%"><span class="eval-ok">✓</span><span class="eval-name">escalation</span><span class="eval-meter"><span></span></span><span class="eval-score">100%</span></li>
-                    </ul>
-                    <p class="eval-summary">
-                        <span><b>92.5%</b> pass</span>
-                        <span><b>1.8s</b> p50</span>
-                        <span><b>local</b> model</span>
-                    </p>
-                </div>
-            </figure>
-            <div class="hero-tiles" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <div class="tile-panel" role="img" aria-label="A panel of glazed tiles that together show a wave and the sun"></div>
         </div>
     </div>
 
@@ -75,9 +53,6 @@ permalink: /
         <div class="services-grid">
             <article class="service-card featured">
                 <div class="service-head">
-                    <div class="service-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    </div>
                     <span class="service-num">01</span>
                 </div>
                 <h3>AI Adoption &amp; Agents</h3>
@@ -93,9 +68,6 @@ permalink: /
 
             <article class="service-card">
                 <div class="service-head">
-                    <div class="service-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01"/></svg>
-                    </div>
                     <span class="service-num">02</span>
                 </div>
                 <h3>Local Models</h3>
@@ -110,9 +82,6 @@ permalink: /
 
             <article class="service-card">
                 <div class="service-head">
-                    <div class="service-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>
-                    </div>
                     <span class="service-num">03</span>
                 </div>
                 <h3>Fine-tuning</h3>
@@ -126,9 +95,6 @@ permalink: /
 
             <article class="service-card">
                 <div class="service-head">
-                    <div class="service-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-                    </div>
                     <span class="service-num">04</span>
                 </div>
                 <h3>Evals for Agents</h3>
@@ -143,9 +109,6 @@ permalink: /
 
             <article class="service-card">
                 <div class="service-head">
-                    <div class="service-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                    </div>
                     <span class="service-num">05</span>
                 </div>
                 <h3>Python Backend Dev</h3>
@@ -159,9 +122,6 @@ permalink: /
 
             <article class="service-card">
                 <div class="service-head">
-                    <div class="service-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.78A6 6 0 0 0 4.5 12.5 3.5 3.5 0 0 0 6 19h11.5z"/></svg>
-                    </div>
                     <span class="service-num">06</span>
                 </div>
                 <h3>Salesforce &amp; DevOps</h3>
@@ -242,17 +202,17 @@ permalink: /
         <h2 class="section-title">Roughly how it goes</h2>
         <ol class="steps">
             <li class="step">
-                <span class="step-num">1</span>
+                <span class="step-tiles" aria-hidden="true"><i class="on"></i><i></i><i></i></span>
                 <h3>We talk it through</h3>
                 <p>You tell me what you're trying to fix. If AI isn't the right tool for it, I'll say so.</p>
             </li>
             <li class="step">
-                <span class="step-num">2</span>
+                <span class="step-tiles" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span>
                 <h3>I build it</h3>
                 <p>You get something to try early on, then I build it out properly. Claude, a local model or both, depending on cost and how sensitive the data is.</p>
             </li>
             <li class="step">
-                <span class="step-num">3</span>
+                <span class="step-tiles" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>
                 <h3>I hand it over</h3>
                 <p>With evals you can run yourself and code your team can read and maintain.</p>
             </li>
@@ -267,19 +227,13 @@ permalink: /
             <div class="about-stats">
                 <div class="stat">
                     <div class="stat-number">15+</div>
-                    <div class="stat-label">Years Experience</div>
+                    <div class="stat-label">years building software</div>
                 </div>
+                <div class="stat-tile" aria-hidden="true"></div>
+                <div class="stat-tile" aria-hidden="true"></div>
                 <div class="stat">
                     <div class="stat-number">50+</div>
-                    <div class="stat-label">Projects Delivered</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">SMB</div>
-                    <div class="stat-label">Focused</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">QLD</div>
-                    <div class="stat-label">Based</div>
+                    <div class="stat-label">projects delivered</div>
                 </div>
             </div>
             <div class="about-content">
@@ -288,18 +242,7 @@ permalink: /
                 <p>I've been building software for 15 years: AWS, Salesforce, Python, and more recently, a lot of AI work with Claude and other LLMs. I run Azul Labs from the Sunshine Coast.</p>
                 <p>Lately a lot of that is setting up and fine-tuning local models for teams that need to keep data in-house, and writing evals for agents before they go live.</p>
                 <p>I work best with startups and scale-ups that have a real problem to solve. If you need someone to build something that works and explain it in plain English, that's what I do.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Claude</span>
-                    <span class="tech-tag">Anthropic</span>
-                    <span class="tech-tag">Pydantic AI</span>
-                    <span class="tech-tag">Local LLMs</span>
-                    <span class="tech-tag">Fine-tuning</span>
-                    <span class="tech-tag">Evals</span>
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">FastAPI</span>
-                    <span class="tech-tag">Salesforce</span>
-                    <span class="tech-tag">AWS</span>
-                </div>
+                <p>Also mine: <a href="https://forcebench.ai">Forcebench</a>, an open benchmark of AI models on Salesforce work, and <a href="https://garden.azl.au">the garden</a>, my working notes.</p>
             </div>
         </div>
     </div>
