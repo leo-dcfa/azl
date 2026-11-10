@@ -928,6 +928,211 @@ h2 em {
     color: var(--blue-300);
 }
 
+.founder {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line-strong);
+}
+
+.about-content .founder-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--midnight);
+    margin-bottom: 0.25rem;
+}
+
+.about-content .founder-role {
+    font-size: 0.975rem;
+    margin-bottom: 0;
+}
+
+/* Inner pages (the local AI set-up page) */
+.page-hero {
+    padding-bottom: 6rem;
+}
+
+/* Local AI page hero: the same terminal card, showing a cluster drawn in box characters.
+   Each line of the drawing is its own span so the picture is drawn top to bottom on load. */
+.ascii {
+    margin: 0 0 1.1rem;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    line-height: 1.2;
+    color: var(--blue-300);
+    animation: none;
+    overflow: hidden;
+}
+
+.ascii span {
+    display: block;
+    white-space: pre;
+    animation: lineIn 0.3s ease-out both;
+    animation-delay: calc(0.6s + var(--i) * 0.09s);
+}
+
+.ascii b { font-weight: 400; color: var(--white); }
+.ascii u { text-decoration: none; color: #A9BFD8; }
+.ascii i { font-style: normal; color: var(--gold); }
+.ascii em { font-style: normal; color: #5FD19B; }
+
+.ascii + .eval-summary {
+    animation-delay: 1.7s;
+}
+
+.page-hero h1 {
+    max-width: 14ch;
+}
+
+.page-hero .hero-sub,
+.page-hero .hero-sub-2 {
+    max-width: 640px;
+}
+
+.alt {
+    background: var(--sand);
+}
+
+.section-lead {
+    color: var(--slate);
+    font-size: 1.1rem;
+    max-width: 62ch;
+    margin: -1.75rem 0 0;
+}
+
+.tier-block {
+    margin-top: 3rem;
+}
+
+.tier-block h3,
+.includes-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.table-scroll {
+    overflow-x: auto;
+    background: var(--white);
+    border-radius: var(--radius);
+}
+
+.tier-table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+    font-size: 0.975rem;
+}
+
+.tier-table th,
+.tier-table td {
+    text-align: left;
+    vertical-align: top;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--line);
+    color: var(--slate);
+}
+
+.tier-table tbody tr:last-child th,
+.tier-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.tier-table thead th {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--blue-700);
+}
+
+.tier-table tbody th {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--midnight);
+    white-space: nowrap;
+}
+
+.tier-table td:not(:last-child) {
+    color: var(--midnight);
+    white-space: nowrap;
+}
+
+.tier-table td.none {
+    color: var(--slate);
+}
+
+.includes-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--grout);
+    margin-top: 3rem;
+}
+
+.includes-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2rem;
+}
+
+.check-list {
+    list-style: none;
+    display: grid;
+    gap: 0.6rem;
+    color: var(--slate);
+}
+
+.check-list li {
+    display: grid;
+    grid-template-columns: 10px 1fr;
+    gap: 0.9rem;
+}
+
+.check-list li::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    margin-top: 0.5em;
+    border-radius: 2px;
+    background: var(--blue-700);
+}
+
+.price-card {
+    background: var(--blue-700);
+    color: var(--white);
+}
+
+.price-card p {
+    color: var(--blue-100);
+    margin-bottom: 1.5rem;
+}
+
+.price-card a {
+    font-weight: 600;
+}
+
+.step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--blue-700) !important;
+    margin-bottom: 0.6rem;
+}
+
+.steps {
+    row-gap: 3rem;
+}
+
+.own-copy a,
+.service-card:not(.featured) a {
+    color: var(--blue-700);
+    font-weight: 600;
+}
+
 /* FAQ */
 .faq {
     padding: 7rem 3rem;
@@ -1187,7 +1392,8 @@ footer {
     }
 
     .services-grid,
-    .steps {
+    .steps,
+    .includes-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1230,6 +1436,10 @@ footer {
 @media (max-width: 480px) {
     .eval-card {
         font-size: 0.72rem;
+    }
+
+    .ascii {
+        font-size: 0.8rem;
     }
 
     .eval-rows li {

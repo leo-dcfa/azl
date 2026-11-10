@@ -1,17 +1,17 @@
 - q: Can we use AI without sending our data to the cloud?
-  a: Yes. Open models are now good enough for a lot of business tasks. I can set one up on your own servers with vLLM or MLX, so your data stays on your network.
+  a: Yes. Open models are now good enough for a lot of business tasks. We can set one up on your own servers with vLLM or MLX, so your data stays on your network.
 - q: Can you run something for us without using the cloud?
-  a: Yes. If you need documents analysed or a model run over sensitive data, I can do it on infrastructure I run myself, so nothing is sent to OpenAI, Anthropic or any other AI company. For anything long term, I'd usually set it up on your own servers instead.
+  a: Yes. If you need documents analysed or a model run over sensitive data, we can do it on infrastructure we run ourselves, so nothing is sent to OpenAI, Anthropic or any other AI company. For anything long term, we'd usually set it up on your own servers instead.
 - q: Can you tell if a model has been tampered with?
-  a: Partly. I check the model files against the hashes the publisher released, and use formats that can't carry hidden code, so you know you're running the weights that were actually published. Nobody can prove a model has no hidden behaviour trained into it. So I also run models and agents in a sandbox, with no route to the internet or to files they don't need, and use evals to check how they behave.
+  a: Partly. We check the model files against the hashes the publisher released, and use formats that can't carry hidden code, so you know you're running the weights that were actually published. Nobody can prove a model has no hidden behaviour trained into it. So we also run models and agents in a sandbox, with no route to the internet or to files they don't need, and use evals to check how they behave.
 - q: What are evals, and do I need them?
-  a: Evals are tests for an AI agent. They run it against real examples and score the answers, so you can tell whether a prompt change or a new model made things better or worse. If an agent talks to customers or makes decisions, you want them. I write mine with Pydantic Evals.
+  a: Evals are tests for an AI agent. They run it against real examples and score the answers, so you can tell whether a prompt change or a new model made things better or worse. If an agent talks to customers or makes decisions, you want them. We write ours with Pydantic Evals.
 - q: When is fine-tuning worth it?
-  a: When a good prompt and a few examples still don't get a model where it needs to be, or when you want a small model that does one job really well. I run evals on the base model and the tuned one, so you can see whether the tuning paid off.
+  a: When a good prompt and a few examples still don't get a model where it needs to be, or when you want a small model that does one job really well. We run evals on the base model and the tuned one, so you can see whether the tuning paid off.
 - q: Who owns what you build?
-  a: You do. Code, prompts, datasets, evals and any fine-tuned models are handed over to you. Open models come with their own licences, so I check those fit how you plan to use them.
+  a: You do. Code, prompts, datasets, evals and any fine-tuned models are handed over to you. Open models come with their own licences, so we check those fit how you plan to use them.
 - q: Do you only work with Claude?
-  a: No. About 25% of my work is handled by Claude and the other 75% by local models. Not every percent is equal, though. That 25% goes to the tasks local models can't handle yet.
+  a: No. About 25% of our work is handled by Claude and the other 75% by local models. Not every percent is equal, though. That 25% goes to the tasks local models can't handle yet.
 - q: Do you still do Salesforce and Python work?
   a: Yes. Apex, Lightning, CI/CD and deployment pipelines on the Salesforce side, and FastAPI and Pydantic backends on AWS for Python.
 - q: Where are you based?
