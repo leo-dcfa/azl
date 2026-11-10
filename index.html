@@ -2,7 +2,7 @@
 layout: home
 title: AI Engineer, Sunshine Coast · Local LLMs & Agent Evals
 description: Leo Alves is an AI engineer on the Sunshine Coast, QLD. Agents, local LLMs, private AI work, fine-tuning, agent evals, Claude API, Python and Salesforce.
-keywords: AI consulting Sunshine Coast, AI sovereignty, sovereign AI, own your AI, AI intellectual property, avoid AI vendor lock-in, AI engineer Queensland, Claude API integration, Anthropic AI developer, local LLM setup, self-hosted LLM, on-premise AI, private AI, AI without the cloud, private data analysis, LLM fine-tuning, fine-tuning open models, Ollama, vLLM, llama.cpp, open-weight models, agent evals, LLM evaluation, AI agent testing, Salesforce developer Sunshine Coast, Python FastAPI development, Pydantic AI, LLM integration Australia, agentic AI, startup AI solutions, Southeast Queensland software consultant
+keywords: AI consulting Sunshine Coast, AI sovereignty, sovereign AI, own your AI, AI intellectual property, avoid AI vendor lock-in, AI engineer Queensland, Claude API integration, Anthropic AI developer, local LLM setup, self-hosted LLM, on-premise AI, private AI, AI without the cloud, private data analysis, LLM fine-tuning, fine-tuning open models, vLLM, MLX, DGX Spark, open-weight models, agent evals, LLM evaluation, AI agent testing, Salesforce developer Sunshine Coast, Python FastAPI development, Pydantic AI, LLM integration Australia, agentic AI, startup AI solutions, Southeast Queensland software consultant
 permalink: /
 ---
 <!-- Hero -->
@@ -23,48 +23,28 @@ permalink: /
         </div>
 
         <div class="hero-visual">
-            <div class="tile-panel">
-                <figure class="tile tile-agents">
-                    <svg viewBox="0 0 100 100" aria-hidden="true">
-                        <circle cx="50" cy="46" r="24" fill="none" stroke="#1E5AA8" stroke-width="5"/>
-                        <circle cx="29.2" cy="58" r="5" fill="#0B2545"/>
-                        <circle cx="70.8" cy="58" r="5" fill="#5BA3D9"/>
-                        <circle cx="50" cy="46" r="5" fill="#0B2545"/>
-                        <g class="orbit"><circle cx="50" cy="22" r="7" fill="#D4A853"/></g>
-                    </svg>
-                    <figcaption>agents</figcaption>
-                </figure>
-                <figure class="tile tile-claude">
-                    <svg viewBox="0 0 100 100" aria-hidden="true">
-                        <g class="spin" stroke="#D4A853" stroke-width="5" stroke-linecap="round">
-                            <line x1="50" y1="20" x2="50" y2="72"/>
-                            <line x1="24" y1="46" x2="76" y2="46"/>
-                            <line x1="31.6" y1="27.6" x2="68.4" y2="64.4"/>
-                            <line x1="68.4" y1="27.6" x2="31.6" y2="64.4"/>
-                        </g>
-                    </svg>
-                    <figcaption>claude</figcaption>
-                </figure>
-                <figure class="tile tile-python">
-                    <svg viewBox="0 0 100 100" aria-hidden="true">
-                        <g class="hooks" fill="none" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
-                            <path d="M30 46V34a8 8 0 0 1 8-8h20a8 8 0 0 1 8 8v12H42" stroke="#FFFFFF"/>
-                            <path d="M70 46v12a8 8 0 0 1-8 8H42a8 8 0 0 1-8-8V46h24" stroke="#D4A853"/>
-                        </g>
-                    </svg>
-                    <figcaption>python</figcaption>
-                </figure>
-                <figure class="tile tile-local">
-                    <svg viewBox="0 0 100 100" aria-hidden="true">
-                        <g stroke="#5BA3D9" stroke-width="4" stroke-linecap="round">
-                            <path d="M40 16v7M50 16v7M60 16v7M40 69v7M50 69v7M60 69v7M20 36h7M20 46h7M20 56h7M73 36h7M73 46h7M73 56h7"/>
-                        </g>
-                        <rect x="32" y="28" width="36" height="36" rx="4" fill="none" stroke="#0B2545" stroke-width="5"/>
-                        <rect class="core" x="44" y="40" width="12" height="12" rx="1.5" fill="#1E5AA8"/>
-                    </svg>
-                    <figcaption>local models</figcaption>
-                </figure>
-            </div>
+            <figure class="eval-card" aria-label="Illustrative example: chatting with an agent on a local model using clai, then running its evals">
+                <div class="eval-card-bar">
+                    <span class="eval-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                    <span class="eval-card-title">support_agent</span>
+                </div>
+                <div class="eval-card-body">
+                    <p class="eval-cmd"><span class="prompt">$</span> uvx clai <span class="flag">-a</span> support_agent:agent "Where’s order 4417?"</p>
+                    <p class="eval-reply">Order 4417 shipped on Tuesday and should arrive Friday.</p>
+                    <p class="eval-cmd"><span class="prompt">$</span> uv run evals/support_agent.py</p>
+                    <ul class="eval-rows">
+                        <li style="--score: 96%"><span class="eval-ok">✓</span><span class="eval-name">tool_selection</span><span class="eval-meter"><span></span></span><span class="eval-score">96%</span></li>
+                        <li style="--score: 92%"><span class="eval-ok">✓</span><span class="eval-name">grounded_answers</span><span class="eval-meter"><span></span></span><span class="eval-score">92%</span></li>
+                        <li style="--score: 82%" class="warn"><span class="eval-ok">!</span><span class="eval-name">refund_policy</span><span class="eval-meter"><span></span></span><span class="eval-score">82%</span></li>
+                        <li style="--score: 100%"><span class="eval-ok">✓</span><span class="eval-name">escalation</span><span class="eval-meter"><span></span></span><span class="eval-score">100%</span></li>
+                    </ul>
+                    <p class="eval-summary">
+                        <span><b>92.5%</b> pass</span>
+                        <span><b>1.8s</b> p50</span>
+                        <span><b>local</b> model</span>
+                    </p>
+                </div>
+            </figure>
         </div>
     </div>
 
@@ -75,9 +55,11 @@ permalink: /
             <li>Anthropic API</li>
             <li>Pydantic AI</li>
             <li>Pydantic Evals</li>
-            <li>Ollama</li>
             <li>vLLM</li>
-            <li>llama.cpp</li>
+            <li>MLX</li>
+            <li>TensorFold</li>
+            <li>NVIDIA</li>
+            <li>DGX Spark</li>
             <li>FastAPI</li>
             <li>Salesforce</li>
             <li>AWS</li>
@@ -112,11 +94,10 @@ permalink: /
                     <span class="service-num">02</span>
                 </div>
                 <h3>Local Models</h3>
-                <p>Some businesses can't send their data off to a cloud AI provider. I set up open models on your own servers or cloud account and hook them into the tools you already use.</p>
+                <p>Some businesses can't send their data off to a cloud AI provider. I set up open models on your own servers or cloud account and hook them into the tools you already use. I check the weights against what the publisher released, and run them sandboxed.</p>
                 <div class="service-tags">
-                    <span class="service-tag">Ollama</span>
                     <span class="service-tag">vLLM</span>
-                    <span class="service-tag">llama.cpp</span>
+                    <span class="service-tag">MLX</span>
                     <span class="service-tag">On-prem</span>
                 </div>
             </article>

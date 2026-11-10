@@ -280,78 +280,158 @@ nav.scrolled {
     flex-wrap: wrap;
 }
 
-/* Hero visual: four tiles, one per kind of work. Same 2 x 2 as the logo.
-   They are laid one after another on load; each motif moves a little on hover. */
+/* Hero visual: a terminal. Chat with an agent on a local model, then run its evals.
+   Lines appear one after another on load and the meters fill as their rows arrive. */
 .hero-visual {
     display: flex;
     justify-content: flex-end;
 }
 
-.tile-panel {
+.eval-card {
     width: 100%;
-    max-width: 480px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--grout);
-}
-
-.tile {
-    position: relative;
-    aspect-ratio: 1;
+    max-width: 520px;
+    background: var(--blue-900);
+    color: #CFE0F2;
     border-radius: var(--radius);
-    overflow: hidden;
-    background: var(--white);
-    color: var(--slate);
-    animation: lay 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-
-.tile:nth-child(2) { animation-delay: 0.12s; }
-.tile:nth-child(3) { animation-delay: 0.24s; }
-.tile:nth-child(4) { animation-delay: 0.36s; }
-
-.tile-claude { background: var(--blue-900); color: #C9D8EA; }
-.tile-python { background: var(--blue-700); color: var(--blue-100); }
-
-.tile svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.tile figcaption {
-    position: absolute;
-    left: 1rem;
-    bottom: 0.8rem;
     font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.04em;
+    font-size: 0.8rem;
+    overflow: hidden;
 }
 
-/* Motifs turn about the centre of their own artwork (50, 46 in a 100-unit tile) */
-.tile svg .orbit,
-.tile svg .spin,
-.tile svg .hooks,
-.tile svg .core {
-    transform-box: view-box;
-    transform-origin: 50% 46%;
-    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+.eval-card-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.tile svg .orbit {
-    animation: orbit 16s linear infinite;
+.eval-dots {
+    display: grid;
+    grid-template-columns: repeat(2, 7px);
+    gap: 2px;
 }
 
-.tile:hover svg .spin { transform: rotate(45deg); }
-.tile:hover svg .hooks { transform: rotate(180deg); }
-.tile:hover svg .core { transform: scale(1.5); }
+.eval-dots i {
+    width: 7px;
+    height: 7px;
+    border-radius: 1px;
+    background: var(--blue-700);
+}
 
-@keyframes lay {
-    from { opacity: 0; transform: translateY(14px) scale(0.96); }
+.eval-dots i:nth-child(2) { background: var(--blue-500); }
+.eval-dots i:nth-child(3) { background: var(--blue-300); }
+
+.eval-card-title {
+    color: #A9BFD8;
+    font-size: 0.75rem;
+}
+
+.eval-card-body {
+    padding: 1.4rem 1.4rem 1.25rem;
+}
+
+.eval-card-body > *,
+.eval-rows li {
+    animation: lineIn 0.4s ease-out both;
+}
+
+.eval-cmd {
+    color: var(--white);
+    margin-bottom: 1.1rem;
+    padding-left: 1rem;
+    text-indent: -1rem;
+}
+
+.eval-cmd .prompt { color: var(--blue-300); margin-right: 0.25rem; }
+.eval-cmd .flag { color: var(--gold); }
+
+.eval-reply {
+    color: #A9BFD8;
+    margin: -0.6rem 0 1.1rem;
+    padding-left: 1rem;
+    animation-delay: 0.7s;
+}
+
+.eval-reply + .eval-cmd { animation-delay: 1.4s; }
+
+.eval-rows {
+    list-style: none;
+    display: grid;
+    gap: 0.6rem;
+    animation: none;
+}
+
+.eval-rows li {
+    display: grid;
+    grid-template-columns: 1rem 9.5rem 1fr 2.75rem;
+    align-items: center;
+    gap: 0.6rem;
+    animation-delay: calc(1.9s + var(--i, 0) * 0.2s);
+}
+
+.eval-rows li:nth-child(2) { --i: 1; }
+.eval-rows li:nth-child(3) { --i: 2; }
+.eval-rows li:nth-child(4) { --i: 3; }
+
+.eval-ok { color: #5FD19B; font-weight: 600; }
+.eval-rows li.warn .eval-ok { color: var(--gold); }
+
+.eval-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.eval-meter {
+    height: 6px;
+    border-radius: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.eval-meter span {
+    display: block;
+    height: 100%;
+    width: var(--score);
+    background: var(--blue-300);
+    transform-origin: left;
+    animation: meterIn 0.8s ease-out both;
+    animation-delay: calc(2s + var(--i, 0) * 0.2s);
+}
+
+.eval-rows li.warn .eval-meter span {
+    background: var(--gold);
+}
+
+.eval-score {
+    text-align: right;
+    color: var(--white);
+}
+
+.eval-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.25rem;
+    margin-top: 1.1rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #A9BFD8;
+    animation-delay: 3s;
+}
+
+.eval-summary b {
+    color: var(--white);
+    font-weight: 600;
+}
+
+@keyframes lineIn {
+    from { opacity: 0; transform: translateY(4px); }
     to { opacity: 1; transform: none; }
 }
 
-@keyframes orbit {
-    to { transform: rotate(360deg); }
+@keyframes meterIn {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
 }
 
 /* The four-tile mark, used on the 404 page */
@@ -380,6 +460,7 @@ nav.scrolled {
     display: flex;
     align-items: baseline;
     gap: 2rem;
+    container-type: inline-size;
 }
 
 .stack-label {
@@ -392,11 +473,33 @@ nav.scrolled {
     white-space: nowrap;
 }
 
+/* Twelve items: one line when it fits, otherwise even rows (6+6, 4+4+4, threes, pairs).
+   The steps follow the strip's own width, so keep the count divisible if the list changes. */
 .stack-list {
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1.75rem;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 0.5rem 1.25rem;
+}
+
+.stack-list li {
+    white-space: nowrap;
+}
+
+@container (min-width: 350px) {
+    .stack-list { grid-template-columns: repeat(3, max-content); }
+}
+
+@container (min-width: 600px) {
+    .stack-list { grid-template-columns: repeat(4, max-content); }
+}
+
+@container (min-width: 740px) {
+    .stack-list { grid-template-columns: repeat(6, max-content); }
+}
+
+@container (min-width: 1130px) {
+    .stack-list { grid-template-columns: repeat(12, max-content); }
 }
 
 .stack-list li {
@@ -1125,6 +1228,15 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .eval-card {
+        font-size: 0.72rem;
+    }
+
+    .eval-rows li {
+        grid-template-columns: 0.8rem 7.5rem 1fr 2.4rem;
+        gap: 0.45rem;
+    }
+
     .hero-actions .btn {
         flex: 1;
         justify-content: center;

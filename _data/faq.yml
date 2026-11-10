@@ -1,7 +1,9 @@
 - q: Can we use AI without sending our data to the cloud?
-  a: Yes. Open models are now good enough for a lot of business tasks. I can set one up on your own servers with Ollama, vLLM or llama.cpp, so your data stays on your network.
+  a: Yes. Open models are now good enough for a lot of business tasks. I can set one up on your own servers with vLLM or MLX, so your data stays on your network.
 - q: Can you run something for us without using the cloud?
   a: Yes. If you need documents analysed or a model run over sensitive data, I can do it on infrastructure I run myself, so nothing is sent to OpenAI, Anthropic or any other AI company. For anything long term, I'd usually set it up on your own servers instead.
+- q: Can you tell if a model has been tampered with?
+  a: Partly. I check the model files against the hashes the publisher released, and use formats that can't carry hidden code, so you know you're running the weights that were actually published. Nobody can prove a model has no hidden behaviour trained into it. So I also run models and agents in a sandbox, with no route to the internet or to files they don't need, and use evals to check how they behave.
 - q: What are evals, and do I need them?
   a: Evals are tests for an AI agent. They run it against real examples and score the answers, so you can tell whether a prompt change or a new model made things better or worse. If an agent talks to customers or makes decisions, you want them. I write mine with Pydantic Evals.
 - q: When is fine-tuning worth it?
