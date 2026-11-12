@@ -238,7 +238,7 @@ permalink: /local-ai/
             </details>
             <details class="faq-item">
                 <summary>Should we choose DGX Sparks or a Mac Studio?</summary>
-                <p>A DGX Spark cluster can grow: you add Sparks and move your models up to the larger cluster. A Mac Studio is one box with nothing to cable, and its memory is fixed when you buy it. We recommend one after seeing your tasks in the Evaluation phase.</p>
+                <p>Both can grow: you add Sparks to a cluster, and Mac Studios can be wired together too. The difference is the software. DGX Sparks run NVIDIA’s CUDA stack, which most AI software is built and tested on first, and it is mature at serving many people and agents at the same time. A Mac Studio runs models on Apple’s Metal, which is newer for this work: it is quick and quiet for one or two people at a time, and slows sooner when many requests arrive together. We recommend one after seeing your tasks in the Evaluation phase.</p>
             </details>
             <details class="faq-item">
                 <summary>Can you set up laptops instead of an office machine?</summary>
@@ -302,7 +302,7 @@ permalink: /local-ai/
     "@type": "FAQPage",
     "mainEntity": [
         { "@type": "Question", "name": "How much does a local AI set-up cost?", "acceptedAnswer": { "@type": "Answer", "text": "Each size has one fixed price that covers the hardware and the set-up, quoted up front. Hardware prices move with suppliers, so email leo@azl.au for a current quote." } },
-        { "@type": "Question", "name": "Should we choose DGX Sparks or a Mac Studio?", "acceptedAnswer": { "@type": "Answer", "text": "A DGX Spark cluster can grow: you add Sparks and move your models up to the larger cluster. A Mac Studio is one box with nothing to cable, and its memory is fixed when you buy it. Azul Labs recommends one after seeing your tasks in the Evaluation phase." } },
+        { "@type": "Question", "name": "Should we choose DGX Sparks or a Mac Studio?", "acceptedAnswer": { "@type": "Answer", "text": "Both can grow: you add Sparks to a cluster, and Mac Studios can be wired together too. The difference is the software. DGX Sparks run NVIDIA’s CUDA stack, which most AI software is built and tested on first, and it is mature at serving many people and agents at the same time. A Mac Studio runs models on Apple’s Metal, which is newer for this work: it is quick and quiet for one or two people at a time, and slows sooner when many requests arrive together. Azul Labs recommends one after seeing your tasks in the Evaluation phase." } },
         { "@type": "Question", "name": "Can you set up laptops instead of an office machine?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Azul Labs sets up MacBook Pros and RTX Spark laptops with local models and agents, one per person. A laptop can run its own models on the road and use the machine in the office for heavier work when it is on the office network." } },
         { "@type": "Question", "name": "What if local AI can't do what we need?", "acceptedAnswer": { "@type": "Answer", "text": "Then Azul Labs will say so in the Discovery phase, before you spend anything on hardware." } }
     ]
