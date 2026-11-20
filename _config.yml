@@ -5,6 +5,9 @@ author: Leo Alves
 lang: en_AU
 logo: /assets/images/logo-icon-1024.png
 
+# GoatCounter site code (the part before .goatcounter.com). Empty turns visitor counting off.
+goatcounter: "azullabs"
+
 social:
   name: Azul Labs
   links:
