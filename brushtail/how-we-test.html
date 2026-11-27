@@ -1,0 +1,279 @@
+---
+layout: default
+title: How we test · Brushtail network security check
+description: The rules of engagement for a Brushtail check. Nothing runs without a signed scope, the tool refuses anything outside it, guest Wi-Fi devices are counted and never probed, nothing is attacked, and every command is sealed with SHA-256 hashes.
+keywords: rules of engagement, authorised network scan, signed scope, penetration test authorisation, network security check, small business cyber security, guest Wi-Fi, SHA-256 evidence, Sunshine Coast
+permalink: /brushtail/how-we-test/
+---
+<!-- Hero -->
+<section class="hero page-hero">
+    <div class="hero-grid">
+        <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Brushtail<span class="eyebrow-loc"> · how we test</span></p>
+        <h1>How we <em>test</em></h1>
+        <p class="hero-sub">A security check means letting someone look closely at your network, so you should know exactly what we will and won’t do. This page sets it out in plain words.</p>
+        <p class="hero-sub-2">Most of these rules are built into Brushtail itself, so the tool refuses to break them. The one thing no tool can check is your signature, so nothing starts until it’s on paper.</p>
+        <div class="hero-actions">
+            <a href="/brushtail/sample-report.html" data-goatcounter-click="brushtail-sample-howwetest" data-goatcounter-title="See a sample report (how we test)" class="btn btn-primary">
+                See a sample report
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9H14M14 9L9.5 4.5M14 9L9.5 13.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="/brushtail/" class="btn btn-ghost">About Brushtail</a>
+        </div>
+        </div>
+        <div class="hero-visual">
+            <figure class="eval-card" aria-label="Illustrative example, with made-up details: Brushtail refusing to run before the signed time window opens, then a dry run on the day that confirms the signed scope, the time window, the network and the packet rate cap, and sends nothing">
+                <div class="eval-card-bar">
+                    <span class="eval-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                    <span class="eval-card-title">brushtail</span>
+                </div>
+                <div class="eval-card-body">
+                    <p class="eval-cmd"><span class="prompt">$</span> brushtail run seaside-physio</p>
+                    <p class="eval-reply">Can’t continue. The authorised window has not started. It opens Mon 01 Dec 2026 09:00 AEST.</p>
+                    <p class="eval-cmd"><span class="prompt">$</span> brushtail check seaside-physio</p>
+                    <ul class="eval-rows">
+                        <li style="--score: 100%"><span class="eval-ok">✓</span><span class="eval-name">signed scope</span><span class="eval-meter"><span></span></span><span class="eval-score">yes</span></li>
+                        <li style="--score: 100%"><span class="eval-ok">✓</span><span class="eval-name">inside window</span><span class="eval-meter"><span></span></span><span class="eval-score">open</span></li>
+                        <li style="--score: 100%"><span class="eval-ok">✓</span><span class="eval-name">right network</span><span class="eval-meter"><span></span></span><span class="eval-score">yes</span></li>
+                        <li style="--score: 17%"><span class="eval-ok">✓</span><span class="eval-name">packet rate cap</span><span class="eval-meter"><span></span></span><span class="eval-score">50/s</span></li>
+                    </ul>
+                    <p class="eval-summary">
+                        <span>Dry run</span>
+                        <span><b>0</b> packets sent</span>
+                    </p>
+                </div>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<!-- Permission -->
+<section class="hosting" id="permission">
+    <div class="container hosting-grid">
+        <div class="hosting-copy">
+            <p class="section-label">Permission first</p>
+            <h2>Nothing runs without your <em>signature</em></h2>
+            <p>Before we look at anything, someone able to authorise it, such as the owner or a director, signs a scope. Brushtail won’t start without one, and it refuses anything the scope doesn’t cover.</p>
+            <p>We never scan a business before it has signed. If you’re still deciding, we show you a <a href="/brushtail/sample-report.html">sample report</a> built from made-up data instead.</p>
+        </div>
+        <ul class="hosting-points">
+            <li class="hosting-point">
+                <h3>Who authorised it</h3>
+                <p>The scope names the person who signed, their role and the date they signed it.</p>
+            </li>
+            <li class="hosting-point">
+                <h3>Which networks</h3>
+                <p>Your networks, by the names your staff know, such as “Office” and “Guest Wi-Fi”. Only private office ranges are accepted, so internet addresses are never touched.</p>
+            </li>
+            <li class="hosting-point">
+                <h3>When</h3>
+                <p>A start and an end time. Before the window opens or after it closes, the tool refuses to run.</p>
+            </li>
+            <li class="hosting-point">
+                <h3>From where</h3>
+                <p>Before it sends anything, the tool checks our laptop is joined to a network named in the scope.</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- Rules -->
+<section class="services" id="rules">
+    <div class="container">
+        <p class="section-label">During the check</p>
+        <h2 class="section-title">We look, we don’t <em>touch</em></h2>
+        <p class="section-lead">Brushtail looks and reports. These rules are written into the tool, not left to our good intentions.</p>
+
+        <div class="services-grid">
+            <article class="service-card featured">
+                <div class="service-head"><span class="service-num">01</span></div>
+                <h3>One gatekeeper</h3>
+                <p>A single check approves every address, before anything is scanned and again on everything the scan reports back. Anything outside the scope is refused.</p>
+                <div class="service-tags">
+                    <span class="service-tag">Signed scope</span>
+                    <span class="service-tag">Private ranges only</span>
+                </div>
+            </article>
+            <article class="service-card">
+                <div class="service-head"><span class="service-num">02</span></div>
+                <h3>Gentle by design</h3>
+                <p>At most 50 packets a second by default, and never more than 300. We check common ports only (the 100 most common, by default), so your network and your team carry on as normal.</p>
+                <div class="service-tags">
+                    <span class="service-tag">Rate cap</span>
+                    <span class="service-tag">Common ports</span>
+                </div>
+            </article>
+            <article class="service-card">
+                <div class="service-head"><span class="service-num">03</span></div>
+                <h3>The public left alone</h3>
+                <p>On guest or public Wi-Fi we count the devices we see but never probe them, and we don’t record their names or hardware addresses. Only the router and test devices you name are checked.</p>
+                <div class="service-tags">
+                    <span class="service-tag">Guest Wi-Fi</span>
+                    <span class="service-tag">Counted, not probed</span>
+                </div>
+            </article>
+            <article class="service-card">
+                <div class="service-head"><span class="service-num">04</span></div>
+                <h3>No attacks</h3>
+                <p>We never guess passwords, run exploits, change settings or capture anyone’s traffic. The tool’s scan commands are fixed in its code, with no option to add others.</p>
+                <div class="service-tags">
+                    <span class="service-tag">No passwords</span>
+                    <span class="service-tag">No exploits</span>
+                    <span class="service-tag">No capture</span>
+                </div>
+            </article>
+            <article class="service-card">
+                <div class="service-head"><span class="service-num">05</span></div>
+                <h3>Lookups that say nothing about you</h3>
+                <p>To find known flaws we send only product and version names, such as “OpenSSH 7.4”, to public vulnerability databases, and the public IDs of any flaws they match. Never an address, a device name or your business name.</p>
+                <div class="service-tags">
+                    <span class="service-tag">NVD</span>
+                    <span class="service-tag">CISA KEV</span>
+                    <span class="service-tag">EPSS</span>
+                </div>
+            </article>
+            <article class="service-card">
+                <div class="service-head"><span class="service-num">06</span></div>
+                <h3>Sealed evidence</h3>
+                <p>Every command and its raw output is sealed with SHA-256 hashes, and your report carries each run’s seal. If any file changed afterwards, the hashes would stop matching, and you can check them yourself.</p>
+                <div class="service-tags">
+                    <span class="service-tag">SHA-256</span>
+                    <span class="service-tag">Command log</span>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Before, during, after -->
+<section class="approach" id="steps">
+    <div class="container">
+        <p class="section-label">Start to finish</p>
+        <h2 class="section-title">Before, during and <em>after</em></h2>
+        <ol class="steps">
+            <li class="step">
+                <p class="step-tag">Before you sign</p>
+                <h3>1. A sample, not a scan</h3>
+                <p>While you’re deciding, you see a <a href="/brushtail/sample-report.html">sample report</a> built from made-up data. We don’t look at your network until you’ve signed.</p>
+            </li>
+            <li class="step">
+                <p class="step-tag">Before the visit</p>
+                <h3>2. The scope</h3>
+                <p>You sign a scope naming who authorised the check, the networks it covers and the time window. That’s all the tool will accept.</p>
+            </li>
+            <li class="step">
+                <p class="step-tag">On the day</p>
+                <h3>3. A dry run</h3>
+                <p>With our laptop on your network, a dry run confirms the scope, the window and the network, and shows the plan. It sends nothing.</p>
+            </li>
+            <li class="step">
+                <p class="step-tag">On the day</p>
+                <h3>4. The check</h3>
+                <p>One network at a time, staff network first, then guest Wi-Fi. Each run is sealed with its hashes as soon as it finishes.</p>
+            </li>
+            <li class="step">
+                <p class="step-tag">After the visit</p>
+                <h3>5. Report, then purge</h3>
+                <p>Once you accept the report, we purge the raw scan data, logs and device details. We keep the report, the findings, the scope and the hashes, so the record can still be checked.</p>
+            </li>
+            <li class="step">
+                <p class="step-tag">After you’ve fixed things</p>
+                <h3>6. The re-test</h3>
+                <p>A second check under the same engagement shows what’s fixed, what’s still open and anything new. Here’s a <a href="/brushtail/sample-retest.html">sample re-test</a>.</p>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<!-- Limits -->
+<section class="own alt" id="limits">
+    <div class="container own-grid">
+        <div class="own-copy">
+            <p class="section-label">Being honest</p>
+            <h2>What this check <em>doesn’t</em> cover</h2>
+            <p>A network check is one piece of your security, not all of it. Your report says the same, so nobody reads a clean result as more than it is.</p>
+            <p><a href="/brushtail/sample-report.html">See the limits section of a sample report</a></p>
+        </div>
+        <ul class="own-points">
+            <li class="own-point">
+                <h3>A point in time</h3>
+                <p>The report shows your network on the day we checked. A device added or a setting changed after we leave won’t be in it, which is what the re-test is for.</p>
+            </li>
+            <li class="own-point">
+                <h3>Devices that were off</h3>
+                <p>A laptop taken home, a PC that was switched off or a device asleep at the time won’t show up.</p>
+            </li>
+            <li class="own-point">
+                <h3>Email and cloud accounts</h3>
+                <p>Email, cloud accounts and the passwords that protect them sit outside your office network, so the network check doesn’t cover them.</p>
+            </li>
+            <li class="own-point">
+                <h3>Not every door</h3>
+                <p>We check common ports, not every port. We don’t test your internet connection from outside, and we don’t check IPv6.</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+    <div class="container faq-grid">
+        <div>
+            <p class="section-label">FAQ</p>
+            <h2 class="section-title">Questions about the <em>rules</em></h2>
+        </div>
+        <div class="faq-list">
+            <details class="faq-item" open>
+                <summary>Why do you need a signed scope?</summary>
+                <p>Because checking a network without permission isn’t a security check. In Australia, accessing or interfering with a computer system without authorisation can be an offence under the Criminal Code. The scope is your written permission, and it limits what we may look at and when. We can’t give legal advice, so if you’re unsure who can sign for your business, check with your own adviser.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Who should sign it?</summary>
+                <p>Someone able to authorise it for the business, such as the owner or a director. The scope records their name, their role and the date they signed.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Can you check our network before we decide?</summary>
+                <p>No. We never scan a business before it has signed. We’ll show you a <a href="/brushtail/sample-report.html">sample report</a> built from made-up data, so you can see exactly what you’d get.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Will you see our customers on the guest Wi-Fi?</summary>
+                <p>Only as a number. On guest or public Wi-Fi we count the devices we see but never probe them, and we don’t record their names or hardware addresses. We test only the router and any test devices you name.</p>
+            </details>
+            <details class="faq-item">
+                <summary>What do you keep after the check?</summary>
+                <p>Once you’ve accepted the report, we purge the raw scan data, logs and device details. We keep the report, the findings, the scope and the hashes, so the record can still be verified later.</p>
+            </details>
+            <details class="faq-item">
+                <summary>How can we tell the evidence hasn’t been changed?</summary>
+                <p>Every command and its raw output is sealed with SHA-256 hashes, and the report carries each run’s seal. Ask us for the evidence pack and you, or your IT provider, can check the files against the hashes yourselves.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+    <div class="contact-inner">
+        <h2>Ask us <em>anything</em></h2>
+        <p>If a rule here doesn’t fit your office, or you’d like to go through the scope before signing, email us. We’re happy to walk you through a sample report first.</p>
+        <a href="mailto:hello@azl.au?subject=Brushtail%20check" data-goatcounter-click="brushtail-book-howwetest" data-goatcounter-title="Email us (how we test)" class="contact-btn">
+            hello@azl.au
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9H14M14 9L9.5 4.5M14 9L9.5 13.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+    </div>
+</section>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        { "@type": "Question", "name": "Why do you need a signed scope?", "acceptedAnswer": { "@type": "Answer", "text": "Checking a network without permission is not a security check. In Australia, accessing or interfering with a computer system without authorisation can be an offence under the Criminal Code. The signed scope is the business's written permission and limits what Azul Labs may look at and when. Azul Labs does not give legal advice." } },
+        { "@type": "Question", "name": "Who should sign it?", "acceptedAnswer": { "@type": "Answer", "text": "Someone able to authorise it for the business, such as the owner or a director. The scope records their name, their role and the date they signed." } },
+        { "@type": "Question", "name": "Can you check our network before we decide?", "acceptedAnswer": { "@type": "Answer", "text": "No. Azul Labs never scans a business before it has signed. Prospects see a sample report built from made-up data instead." } },
+        { "@type": "Question", "name": "Will you see our customers on the guest Wi-Fi?", "acceptedAnswer": { "@type": "Answer", "text": "Only as a number. On guest or public Wi-Fi, devices are counted but never probed, and their names and hardware addresses are not recorded. Only the router and any test devices the client names are tested." } },
+        { "@type": "Question", "name": "What do you keep after the check?", "acceptedAnswer": { "@type": "Answer", "text": "Once the client accepts the report, the raw scan data, logs and device details are purged. The report, the findings, the scope and the hashes are kept, so the record can still be verified." } },
+        { "@type": "Question", "name": "How can we tell the evidence hasn't been changed?", "acceptedAnswer": { "@type": "Answer", "text": "Every command and its raw output is sealed with SHA-256 hashes, and the report carries each run's seal. The client can ask for the evidence pack and check the files against the hashes." } }
+    ]
+}
+</script>
