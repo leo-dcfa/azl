@@ -28,7 +28,7 @@ permalink: /brushtail/
                     <span class="eval-card-title">brushtail</span>
                 </div>
                 <div class="eval-card-body">
-                    <p class="eval-cmd"><span class="prompt">$</span> brushtail scan <span class="flag">--scope</span> office.scope</p>
+                    <p class="eval-cmd"><span class="prompt">$</span> brushtail run seaside-physio <span class="flag">--open</span></p>
                     <p class="eval-reply">Signed by the practice manager · staff Wi-Fi · today, 9 am to 5 pm</p>
                     <ul class="eval-rows">
                         <li style="--score: 100%"><span class="eval-ok">✓</span><span class="eval-name">devices found</span><span class="eval-meter"><span></span></span><span class="eval-score">23</span></li>
@@ -53,7 +53,7 @@ permalink: /brushtail/
         <div class="hosting-copy">
             <p class="section-label">Why a check</p>
             <h2>Small offices have <em>forgotten</em> doors</h2>
-            <p>Most small business networks grew one device at a time: a printer here, a camera there, a box someone set up years ago. Attackers scan the internet for exactly these. A check shows you what’s on your network before someone else goes looking.</p>
+            <p>Most small business networks grew one device at a time: a printer here, a camera there, a box someone set up years ago. Attackers look for exactly these. A check shows you what’s on your network before someone else goes looking.</p>
         </div>
         <ul class="hosting-points">
             <li class="hosting-point">
@@ -115,9 +115,11 @@ permalink: /brushtail/
             </article>
             <article class="service-card">
                 <div class="service-head"><span class="service-num">04</span></div>
-                <h3>Guest Wi-Fi</h3>
-                <p>We test whether your guest Wi-Fi can reach your staff network. Visitors’ phones and laptops on it are counted and never probed, and their names aren’t stored.</p>
+                <h3>Your Wi-Fi</h3>
+                <p>We check that each network uses current encryption, that guests can’t reach your staff computers, each other’s devices or the router’s admin page. Visitors’ phones and laptops are counted and never probed, and their names aren’t stored.</p>
                 <div class="service-tags">
+                    <span class="service-tag">Encryption</span>
+                    <span class="service-tag">Guest isolation</span>
                     <span class="service-tag">Network separation</span>
                 </div>
             </article>
@@ -175,7 +177,7 @@ permalink: /brushtail/
             <li class="step">
                 <p class="step-tag">After the visit</p>
                 <h3>6. Re-test</h3>
-                <p>We check again and show you what’s fixed, what’s still open and anything new.</p>
+                <p>We check again and show you what’s fixed, what’s still open and anything new. Once you’ve accepted the report, we delete the raw scan data and keep only the report, the findings and their fingerprints.</p>
             </li>
         </ol>
     </div>
@@ -187,7 +189,7 @@ permalink: /brushtail/
         <div class="own-copy">
             <p class="section-label">Careful by design</p>
             <h2>Quiet, gentle and kept <em>in scope</em></h2>
-            <p>Brushtail looks and reports. It doesn’t try to break in, change settings or slow your network down, and every rule below is enforced by the tool itself.</p>
+            <p>Brushtail looks and reports. No password guessing, no exploits, no recording of your traffic, and at most 50 packets a second by default. Every rule below is enforced by the tool itself.</p>
         </div>
         <ul class="own-points">
             <li class="own-point">
@@ -220,7 +222,7 @@ permalink: /brushtail/
         <div class="faq-list">
             <details class="faq-item" open>
                 <summary>Will the check slow down or break anything?</summary>
-                <p>It’s built to be gentle: a light sweep to find devices, then checks of a short list of risky services on each one. It doesn’t try to break in or change anything, so your team can keep working while it runs.</p>
+                <p>It’s built to be gentle: at most 50 packets a second by default, and only common ports. It doesn’t guess passwords, run exploits or change anything, so your team can keep working while it runs.</p>
             </details>
             <details class="faq-item">
                 <summary>Do we need to install anything?</summary>
@@ -260,7 +262,7 @@ permalink: /brushtail/
     "@type": "Service",
     "name": "Brushtail network security check",
     "serviceType": ["Network security assessment", "Vulnerability assessment", "Guest Wi-Fi separation test"],
-    "description": "An on-site security check of a small business's network by Azul Labs, run with its own tool, Brushtail, under a signed scope. It finds the devices on the networks in scope, checks them for risky services (Remote Desktop, Telnet, file sharing, databases, cameras, printers), matches software versions against NVD, CISA KEV and EPSS, tests whether guest Wi-Fi can reach the staff network, checks the router for UPnP, and delivers an offline HTML and PDF report with sealed evidence. A re-test shows what was fixed.",
+    "description": "An on-site security check of a small business's network by Azul Labs, run with its own tool, Brushtail, under a signed scope. It finds the devices on the networks in scope, checks them for risky services (Remote Desktop, Telnet, file sharing, databases, cameras, printers), matches software versions against NVD, CISA KEV and EPSS, checks Wi-Fi encryption, tests whether guests can reach the staff network, each other or the router's admin page, checks the router for UPnP, and delivers an offline HTML and PDF report with sealed evidence. A re-test shows what was fixed.",
     "url": "https://azl.au/brushtail/",
     "areaServed": "Sunshine Coast, Queensland, Australia",
     "provider": {
@@ -278,7 +280,7 @@ permalink: /brushtail/
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-        { "@type": "Question", "name": "Will the check slow down or break anything?", "acceptedAnswer": { "@type": "Answer", "text": "It is built to be gentle: a light sweep to find devices, then checks of a short list of risky services on each one. It does not try to break in or change anything, so the team can keep working while it runs." } },
+        { "@type": "Question", "name": "Will the check slow down or break anything?", "acceptedAnswer": { "@type": "Answer", "text": "It is built to be gentle: at most 50 packets a second by default, and only common ports. It does not guess passwords, run exploits or change anything, so the team can keep working while it runs." } },
         { "@type": "Question", "name": "Do we need to install anything?", "acceptedAnswer": { "@type": "Answer", "text": "No. Azul Labs brings its own laptop and joins the network for the visit. Nothing is installed on the client's computers." } },
         { "@type": "Question", "name": "What happens to the results?", "acceptedAnswer": { "@type": "Answer", "text": "The report and the sealed evidence belong to the client. The only thing that leaves the office during the check is a lookup of product names and version numbers against public vulnerability lists, which carries nothing about the business." } },
         { "@type": "Question", "name": "We already have an IT provider. Is this for us?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The report is written so an IT provider can act on it straight away, and Azul Labs is happy to go through the findings with them." } },
