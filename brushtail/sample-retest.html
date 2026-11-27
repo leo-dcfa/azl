@@ -118,6 +118,9 @@ section.sand { background: var(--bg-sand); }
 .finding h4 { margin: 0 0 0.25rem; font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
 .finding .fix { background: var(--chip-bg); color: var(--heading); }
 .finding .fix h4 { color: var(--chip-text); }
+.router-steps { margin-top: 0.8rem; border: 1px dashed var(--line-strong); border-radius: 10px; padding: 0.8rem 1rem; }
+.router-steps h4 { margin: 0 0 0.25rem; font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+.router-steps p { margin: 0; color: var(--heading); }
 details { margin-top: 0.9rem; font-size: 0.88rem; }
 details summary { cursor: pointer; color: var(--muted); font-weight: 500; }
 details ul { margin: 0.5rem 0 0; padding-left: 1.1rem; }
@@ -205,7 +208,17 @@ td.mono { white-space: nowrap; }
   .close h2 em { color: var(--blue-700); }
   .close p, .close .foot { color: var(--text); }
 }
-</style>
+
+/* Essential Eight */
+.e8 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.9rem; margin-top: 1.4rem; }
+.e8 .card { padding: 1.1rem 1.2rem; break-inside: avoid; }
+.e8 h3 { font-size: 1.02rem; margin: 0.5rem 0 0.35rem; }
+.e8 p { font-size: 0.88rem; margin: 0; }
+.e8 .ev { margin-top: 0.5rem; font-size: 0.8rem; color: var(--warn-text); background: var(--warn-bg); border-radius: 6px; padding: 0.35rem 0.55rem; }
+.pill { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.pill::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: currentColor; }
+.pill.met { color: var(--ok); } .pill.partly { color: var(--sev-medium); }
+.pill.not-met { color: var(--sev-critical); } .pill.unknown { color: var(--muted); }</style>
 </head>
 <body>
 
@@ -264,6 +277,7 @@ td.mono { white-space: nowrap; }
   </div>
 </section>
 
+
 <section>
   <div class="wrap">
     <div class="section-label">Since the last check</div>
@@ -287,7 +301,7 @@ td.mono { white-space: nowrap; }
     <div class="section-label">Findings</div>
     <h2>What to <em>fix</em>, most urgent first</h2>
     <p class="lede" style="margin-bottom:1.8rem">Each finding says what we saw, why it matters to the business, and what to change. The evidence line lets your IT provider check it for themselves.</p>
-    <article class="card finding critical">
+        <article class="card finding critical">
       <header>
         <span class="sev sev-critical">Critical</span>
         <span class="chip">Practice Wi-Fi</span>
@@ -306,7 +320,8 @@ td.mono { white-space: nowrap; }
         <ul><li>CVE-2021-36260 · CVSS 9.8 · on CISA KEV</li><li>Matched cpe:2.3:o:hikvision:camera_firmware:5.4.0:*:*:*:*:*:*:* against NVD on 27 Nov 2026</li></ul>
       </div>
     </article>
-    <article class="card finding critical">
+
+        <article class="card finding critical">
       <header>
         <span class="sev sev-critical">Critical</span>
         <span class="chip">Waiting room Wi-Fi</span>
@@ -317,6 +332,10 @@ td.mono { white-space: nowrap; }
         <div class="why"><h4>Why it matters</h4><p>Anyone using the guest Wi-Fi can reach your business computers, as if they had plugged into the office network.</p></div>
         <div class="fix"><h4>How to fix it</h4>Separate the networks: put guest Wi-Fi on its own VLAN or the router&#39;s guest mode, and block guest-to-staff traffic in the firewall.</div>
       </div>
+      <div class="router-steps">
+        <h4>On your TP-Link router</h4>
+        <p>Usually under Advanced › Guest Network: turn the guest network on and untick “Allow guests to see each other and access my local network”. Menus vary by model and firmware: <a href="https://www.tp-link.com/au/support/">TP-Link support</a> has the guide for yours.</p>
+<p class="muted" style="font-size:0.78rem;margin:0.3rem 0 0">Recognised from: TP-Link</p>      </div>
       <p style="margin-top:0.9rem;font-size:0.9rem"><strong>Affected:</strong> 192.168.10.12, 192.168.10.30</p>
       <details class="screen-only"><summary>Evidence (2)</summary>
         <ul><li>192.168.10.12 answered a connection probe from guest Wi-Fi in run 20261127T100000-waiting-room-wi-fi</li><li>192.168.10.30 answered a connection probe from guest Wi-Fi in run 20261127T100000-waiting-room-wi-fi</li></ul>
@@ -325,7 +344,8 @@ td.mono { white-space: nowrap; }
         <ul><li>192.168.10.12 answered a connection probe from guest Wi-Fi in run 20261127T100000-waiting-room-wi-fi</li><li>192.168.10.30 answered a connection probe from guest Wi-Fi in run 20261127T100000-waiting-room-wi-fi</li></ul>
       </div>
     </article>
-    <article class="card finding high">
+
+        <article class="card finding high">
       <header>
         <span class="sev sev-high">High</span>
         <span class="chip">Practice Wi-Fi</span>
@@ -344,7 +364,8 @@ td.mono { white-space: nowrap; }
         <ul><li>192.168.10.30: 1433/tcp ms-sql-s (Microsoft SQL Server 2016), found by the port check in run 20261127T093500-practice-wi-fi</li></ul>
       </div>
     </article>
-    <article class="card finding high">
+
+        <article class="card finding high">
       <header>
         <span class="sev sev-high">High</span>
         <span class="chip">Waiting room Wi-Fi</span>
@@ -355,6 +376,10 @@ td.mono { white-space: nowrap; }
         <div class="why"><h4>Why it matters</h4><p>On public Wi-Fi, a stranger at the next table can reach a customer&#39;s laptop or phone directly, and any of your own devices on that network.</p></div>
         <div class="fix"><h4>How to fix it</h4>Turn on &#39;client isolation&#39; (also called AP isolation or guest mode) on the guest network. Then run this check again.</div>
       </div>
+      <div class="router-steps">
+        <h4>On your TP-Link router</h4>
+        <p>Usually under Advanced › Guest Network: untick “Allow guests to see each other and access my local network”. Menus vary by model and firmware: <a href="https://www.tp-link.com/au/support/">TP-Link support</a> has the guide for yours.</p>
+<p class="muted" style="font-size:0.78rem;margin:0.3rem 0 0">Recognised from: TP-Link</p>      </div>
       <p style="margin-top:0.9rem;font-size:0.9rem"><strong>Affected:</strong> 4 devices; makers: Apple, Samsung, unidentified</p>
       <details class="screen-only"><summary>Evidence (1)</summary>
         <ul><li>4 device(s) answered the device sweep in run 20261127T100000-waiting-room-wi-fi (TCP connect sweep plus this Mac&#39;s ARP cache); names and hardware addresses were not recorded</li></ul>
@@ -363,7 +388,8 @@ td.mono { white-space: nowrap; }
         <ul><li>4 device(s) answered the device sweep in run 20261127T100000-waiting-room-wi-fi (TCP connect sweep plus this Mac&#39;s ARP cache); names and hardware addresses were not recorded</li></ul>
       </div>
     </article>
-    <article class="card finding high">
+
+        <article class="card finding high">
       <header>
         <span class="sev sev-high">High</span>
         <span class="chip">Waiting room Wi-Fi</span>
@@ -374,6 +400,10 @@ td.mono { white-space: nowrap; }
         <div class="why"><h4>Why it matters</h4><p>Any device on this network, including malware or a guest&#39;s laptop, can ask the router to expose itself to the whole internet, without a password and without anyone noticing.</p></div>
         <div class="fix"><h4>How to fix it</h4>Turn UPnP off in the router&#39;s settings. If a game console or camera needs a port open, add a manual port-forward for that one device.</div>
       </div>
+      <div class="router-steps">
+        <h4>On your TP-Link router</h4>
+        <p>Usually under Advanced › NAT Forwarding › UPnP: switch it off. Menus vary by model and firmware: <a href="https://www.tp-link.com/au/support/">TP-Link support</a> has the guide for yours.</p>
+<p class="muted" style="font-size:0.78rem;margin:0.3rem 0 0">Recognised from: TP-Link</p>      </div>
       <p style="margin-top:0.9rem;font-size:0.9rem"><strong>Affected:</strong> 192.168.50.1 (Router / gateway)</p>
       <details class="screen-only"><summary>Evidence (1)</summary>
         <ul><li>SSDP reply from 192.168.50.1 in run 20261127T100000-waiting-room-wi-fi: urn:schemas-upnp-org:device:InternetGatewayDevice:1; server: Linux/3.10 UPnP/1.0 miniupnpd/2.1</li></ul>
@@ -382,7 +412,8 @@ td.mono { white-space: nowrap; }
         <ul><li>SSDP reply from 192.168.50.1 in run 20261127T100000-waiting-room-wi-fi: urn:schemas-upnp-org:device:InternetGatewayDevice:1; server: Linux/3.10 UPnP/1.0 miniupnpd/2.1</li></ul>
       </div>
     </article>
-    <article class="card finding high">
+
+        <article class="card finding high">
       <header>
         <span class="sev sev-high">High</span>
         <span class="chip">Waiting room Wi-Fi</span>
@@ -393,6 +424,10 @@ td.mono { white-space: nowrap; }
         <div class="why"><h4>Why it matters</h4><p>Whoever controls the router controls the whole network. From guest Wi-Fi, anyone can try its password.</p></div>
         <div class="fix"><h4>How to fix it</h4>Block the admin page from guest Wi-Fi, change the factory password, and turn on automatic firmware updates.</div>
       </div>
+      <div class="router-steps">
+        <h4>On your TP-Link router</h4>
+        <p>Usually under Advanced › System › Administration: change the password and make sure Remote Management is off. Firmware is under Advanced › System › Firmware Update. Menus vary by model and firmware: <a href="https://www.tp-link.com/au/support/">TP-Link support</a> has the guide for yours.</p>
+<p class="muted" style="font-size:0.78rem;margin:0.3rem 0 0">Recognised from: TP-Link</p>      </div>
       <p style="margin-top:0.9rem;font-size:0.9rem"><strong>Affected:</strong> 192.168.50.1 (Router / gateway)</p>
       <details class="screen-only"><summary>Evidence (1)</summary>
         <ul><li>192.168.50.1: 80/tcp http (TP-Link router admin), found by the port check in run 20261127T100000-waiting-room-wi-fi</li></ul>
@@ -401,7 +436,8 @@ td.mono { white-space: nowrap; }
         <ul><li>192.168.50.1: 80/tcp http (TP-Link router admin), found by the port check in run 20261127T100000-waiting-room-wi-fi</li></ul>
       </div>
     </article>
-    <article class="card finding medium">
+
+        <article class="card finding medium">
       <header>
         <span class="sev sev-medium">Medium</span>
         <span class="chip">Practice Wi-Fi</span>
@@ -420,7 +456,8 @@ td.mono { white-space: nowrap; }
         <ul><li>192.168.10.52: 554/tcp rtsp (Hikvision camera), found by the port check in run 20261127T093500-practice-wi-fi</li></ul>
       </div>
     </article>
-    <article class="card finding medium">
+
+        <article class="card finding medium">
       <header>
         <span class="sev sev-medium">Medium</span>
         <span class="chip">Practice Wi-Fi</span>
@@ -439,7 +476,8 @@ td.mono { white-space: nowrap; }
         <ul><li>192.168.10.12: 445/tcp microsoft-ds (Windows SMB), found by the port check in run 20261127T093500-practice-wi-fi</li><li>192.168.10.15: 445/tcp microsoft-ds (Windows SMB), found by the port check in run 20261127T093500-practice-wi-fi</li></ul>
       </div>
     </article>
-    <article class="card finding medium">
+
+        <article class="card finding medium">
       <header>
         <span class="sev sev-medium">Medium</span>
         <span class="chip">Waiting room Wi-Fi</span>
@@ -450,6 +488,10 @@ td.mono { white-space: nowrap; }
         <div class="why"><h4>Why it matters</h4><p>Anyone nearby can see which sites people visit and read anything not protected by HTTPS, and can join without asking.</p></div>
         <div class="fix"><h4>How to fix it</h4>Turn on WPA3 (or WPA2). For public Wi-Fi, use &#39;Enhanced Open&#39; (OWE) if the access point supports it, or a password on a sign at the counter.</div>
       </div>
+      <div class="router-steps">
+        <h4>On your TP-Link router</h4>
+        <p>Usually under Advanced › Wireless › Wireless Settings: set Security to WPA2/WPA3-Personal or WPA3-Personal. Menus vary by model and firmware: <a href="https://www.tp-link.com/au/support/">TP-Link support</a> has the guide for yours.</p>
+<p class="muted" style="font-size:0.78rem;margin:0.3rem 0 0">Recognised from: TP-Link</p>      </div>
       <details class="screen-only"><summary>Evidence (1)</summary>
         <ul><li>macOS reported the network&#39;s security as: Open (no password) (run 20261127T100000-waiting-room-wi-fi)</li></ul>
       </details>
@@ -457,7 +499,8 @@ td.mono { white-space: nowrap; }
         <ul><li>macOS reported the network&#39;s security as: Open (no password) (run 20261127T100000-waiting-room-wi-fi)</li></ul>
       </div>
     </article>
-    <article class="card finding low">
+
+        <article class="card finding low">
       <header>
         <span class="sev sev-low">Low</span>
         <span class="chip">Practice Wi-Fi</span>
@@ -476,7 +519,8 @@ td.mono { white-space: nowrap; }
         <ul><li>192.168.10.40: 9100/tcp jetdirect, found by the port check in run 20261127T093500-practice-wi-fi</li></ul>
       </div>
     </article>
-    <article class="card finding low">
+
+        <article class="card finding low">
       <header>
         <span class="sev sev-low">Low</span>
         <span class="chip">Practice Wi-Fi</span>
@@ -495,7 +539,8 @@ td.mono { white-space: nowrap; }
         <ul><li>CVE-2018-15473 · CVSS 5.3</li><li>Matched cpe:2.3:a:openbsd:openssh:7.4:*:*:*:*:*:*:* against NVD on 27 Nov 2026</li></ul>
       </div>
     </article>
-    <article class="card finding low">
+
+        <article class="card finding low">
       <header>
         <span class="sev sev-low">Low</span>
         <span class="chip">Practice Wi-Fi</span>
@@ -506,6 +551,10 @@ td.mono { white-space: nowrap; }
         <div class="why"><h4>Why it matters</h4><p>Everyone shares one password, so former staff and visitors who were told it can still join, and a captured handshake can be cracked offline if the password is weak.</p></div>
         <div class="fix"><h4>How to fix it</h4>Use a long random password and change it when staff leave. Move to WPA3, or WPA2/WPA3 Enterprise with individual logins.</div>
       </div>
+      <div class="router-steps">
+        <h4>On your TP-Link router</h4>
+        <p>Usually under Advanced › Wireless › Wireless Settings: set Security to WPA2/WPA3-Personal or WPA3-Personal. Menus vary by model and firmware: <a href="https://www.tp-link.com/au/support/">TP-Link support</a> has the guide for yours.</p>
+<p class="muted" style="font-size:0.78rem;margin:0.3rem 0 0">Recognised from: TP-Link</p>      </div>
       <details class="screen-only"><summary>Evidence (1)</summary>
         <ul><li>macOS reported the network&#39;s security as: WPA2 Personal (run 20261127T093500-practice-wi-fi)</li></ul>
       </details>
@@ -513,7 +562,8 @@ td.mono { white-space: nowrap; }
         <ul><li>macOS reported the network&#39;s security as: WPA2 Personal (run 20261127T093500-practice-wi-fi)</li></ul>
       </div>
     </article>
-    <article class="card finding low">
+
+        <article class="card finding low">
       <header>
         <span class="sev sev-low">Low</span>
         <span class="chip">Practice Wi-Fi</span>
@@ -524,6 +574,10 @@ td.mono { white-space: nowrap; }
         <div class="why"><h4>Why it matters</h4><p>Whoever controls the router controls the whole network. From guest Wi-Fi, anyone can try its password.</p></div>
         <div class="fix"><h4>How to fix it</h4>Block the admin page from guest Wi-Fi, change the factory password, and turn on automatic firmware updates.</div>
       </div>
+      <div class="router-steps">
+        <h4>On your TP-Link router</h4>
+        <p>Usually under Advanced › System › Administration: change the password and make sure Remote Management is off. Firmware is under Advanced › System › Firmware Update. Menus vary by model and firmware: <a href="https://www.tp-link.com/au/support/">TP-Link support</a> has the guide for yours.</p>
+<p class="muted" style="font-size:0.78rem;margin:0.3rem 0 0">Recognised from: TP-Link</p>      </div>
       <p style="margin-top:0.9rem;font-size:0.9rem"><strong>Affected:</strong> 192.168.10.1 (Router / gateway)</p>
       <details class="screen-only"><summary>Evidence (1)</summary>
         <ul><li>192.168.10.1: 80/tcp http (TP-Link router admin), found by the port check in run 20261127T093500-practice-wi-fi</li></ul>
@@ -532,9 +586,61 @@ td.mono { white-space: nowrap; }
         <ul><li>192.168.10.1: 80/tcp http (TP-Link router admin), found by the port check in run 20261127T093500-practice-wi-fi</li></ul>
       </div>
     </article>
+
   </div>
 </section>
 
+
+<section class="sand" id="essential-eight">
+  <div class="wrap">
+    <div class="section-label">Essential Eight</div>
+    <h2>Where you stand on the <em>Essential Eight</em></h2>
+    <p class="lede">The Australian Signals Directorate’s eight baseline strategies, at Maturity Level One, the usual target for a small business. 1 met, 5 partly, 1 not met, 1 unknown.</p>
+    <div class="e8">
+      <div class="card">
+        <span class="pill partly">partly</span>
+        <h3>Patch applications</h3>
+        <p>Turn on automatic updates for browsers, Office and PDF readers, and remove software that&#39;s no longer supported.</p>
+<div class="ev">Out-of-date software with known flaws: OpenSSH 7.4 (low)</div>      </div>
+      <div class="card">
+        <span class="pill partly">partly</span>
+        <h3>Patch operating systems</h3>
+        <p>Turn on automatic OS updates, check router and camera firmware monthly, and replace devices that no longer get updates.</p>
+<div class="ev">Out-of-date software with known flaws: Hikvision camera firmware 5.4.0 (critical)</div><p class="muted" style="margin-top:0.4rem">The x-ray PC still runs Windows 10 for its imaging software.</p>      </div>
+      <div class="card">
+        <span class="pill partly">partly</span>
+        <h3>Multi-factor authentication</h3>
+        <p>Turn on MFA for email first, then banking and accounting. Prefer an authenticator app or security key over text messages.</p>
+      </div>
+      <div class="card">
+        <span class="pill not-met">not met</span>
+        <h3>Restrict administrative privileges</h3>
+        <p>Give staff standard accounts, keep one separate admin account per person who needs it, and review who has admin access every quarter.</p>
+      </div>
+      <div class="card">
+        <span class="pill unknown">unknown</span>
+        <h3>Application control</h3>
+        <p>Use the built-in controls (Microsoft Smart App Control or App Control for Business, or managed macOS settings), set up by your IT provider.</p>
+      </div>
+      <div class="card">
+        <span class="pill met">met</span>
+        <h3>Restrict Microsoft Office macros</h3>
+        <p>Macros in emailed Office documents are a long-standing way to deliver malware.</p>
+      </div>
+      <div class="card">
+        <span class="pill partly">partly</span>
+        <h3>User application hardening</h3>
+        <p>Use a current browser with managed security settings; your IT provider can lock them in.</p>
+      </div>
+      <div class="card">
+        <span class="pill partly">partly</span>
+        <h3>Regular backups</h3>
+        <p>Back up automatically to a separate account staff can’t delete from, and test a restore every six months.</p>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:1rem;font-size:0.85rem">A guided self-assessment with Bluegum Dental (Sam Taylor), checked against what the network showed where it could. It isn’t an audit or certification. The strategies are described in full at <a href="https://www.cyber.gov.au/resources-business-and-government/essential-cyber-security/essential-eight">cyber.gov.au</a>.</p>
+  </div>
+</section>
 
 <section>
   <div class="wrap">
@@ -747,7 +853,7 @@ on, and it offers port forwarding to any device.
       <li><span><strong>We check again.</strong> A re-test under the same scope shows what has changed, with the same evidence trail.</span></li>
     </ol>
     <p>We can make the changes with you, or brief your IT provider. Reply to the email this report came with, or visit <a href="https://azl.au">azl.au</a>.</p>
-    <p class="foot">Prepared by Azul Labs with Brushtail 0.1.0 · 27 November 2026, 3:52 pm · Confidential to Bluegum Dental</p>
+    <p class="foot">Prepared by Azul Labs with Brushtail 0.1.0 · 27 November 2026, 4:04 pm · Confidential to Bluegum Dental</p>
   </div>
 </footer>
 </body>
