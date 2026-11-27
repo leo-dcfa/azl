@@ -22,7 +22,7 @@ permalink: /brushtail/
         </div>
         </div>
         <div class="hero-visual">
-            <figure class="eval-card" aria-label="Illustrative example, with made-up data: a terminal running a Brushtail check on an office’s staff network, finding 23 devices, 4 risky services, 2 known flaws and a guest Wi-Fi that reaches the staff network">
+            <figure class="eval-card" data-cli aria-label="Illustrative example, with made-up data: a terminal running a Brushtail check on an office’s staff network, finding 23 devices, 4 risky services, 2 known flaws and a guest Wi-Fi that reaches the staff network">
                 <div class="eval-card-bar">
                     <span class="eval-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
                     <span class="eval-card-title">brushtail</span>
@@ -37,9 +37,10 @@ permalink: /brushtail/
                         <li style="--score: 100%" class="warn"><span class="eval-ok">!</span><span class="eval-name">guest → staff</span><span class="eval-meter"><span></span></span><span class="eval-score">open</span></li>
                     </ul>
                     <p class="eval-summary">
+                        <span class="sev-bar" aria-hidden="true"><i class="high" style="flex: 2"></i><i class="medium" style="flex: 3"></i></span>
                         <span><b>RECEPTION-PC</b> file sharing</span>
-                        <span><b>2</b> high</span>
-                        <span><b>3</b> medium</span>
+                        <span><i class="sev-key high" aria-hidden="true"></i><b>2</b> high</span>
+                        <span><i class="sev-key medium" aria-hidden="true"></i><b>3</b> medium</span>
                     </p>
                 </div>
             </figure>

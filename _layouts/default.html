@@ -32,43 +32,7 @@
 
     {% include footer.html %}
 
-    <script>
-        const nav = document.getElementById('site-nav');
-        const toggle = nav.querySelector('.nav-toggle');
-
-        toggle.addEventListener('click', () => {
-            const open = nav.classList.toggle('open');
-            toggle.setAttribute('aria-expanded', open);
-        });
-
-        nav.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('open');
-                toggle.setAttribute('aria-expanded', 'false');
-            });
-        });
-
-        const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
-        window.addEventListener('scroll', onScroll, { passive: true });
-        onScroll();
-
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.service-card, .own-point, .hosting-point, .step, .about-content').forEach((el, i) => {
-                el.classList.add('reveal');
-                el.style.transitionDelay = `${(i % 3) * 80}ms`;
-                observer.observe(el);
-            });
-        }
-    </script>
+    <script src="/assets/js/site.js?v={{ site.time | date: '%s' }}"></script>
     {%- if site.goatcounter and site.goatcounter != "" and jekyll.environment == "production" %}
     <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.v5.js" crossorigin="anonymous" integrity="sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ"></script>
     {%- endif %}

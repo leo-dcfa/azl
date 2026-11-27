@@ -522,14 +522,29 @@ nav.scrolled {
     margin-bottom: 0.9rem;
 }
 
-.section-label::before {
+/* The two squares are separate so they can be laid one after the other (see Motion below) */
+.section-label {
+    position: relative;
+}
+
+.section-label::before,
+.section-label::after {
     content: "";
     width: 10px;
     height: 10px;
     border-radius: 2px;
     background: var(--blue-700);
-    box-shadow: 12px 0 0 var(--blue-300);
+}
+
+.section-label::before {
     margin-right: 12px;
+}
+
+.section-label::after {
+    position: absolute;
+    left: 12px;
+    top: calc(50% - 5px);
+    background: var(--blue-300);
 }
 
 .section-title,
@@ -699,7 +714,10 @@ h2 em {
 
 .hosting .section-label::before {
     background: var(--blue-300);
-    box-shadow: 12px 0 0 var(--blue-500);
+}
+
+.hosting .section-label::after {
+    background: var(--blue-500);
 }
 
 .hosting-copy h2 {
@@ -1483,6 +1501,235 @@ footer {
     .eyebrow-loc {
         display: none;
     }
+}
+
+/* Motion, in the look of Brushtail's terminal UI.
+   Everything is complete at rest: each animation plays from a visible state, and a page
+   without JavaScript, or a reader who prefers reduced motion, sees the finished thing.
+   assets/js/site.js adds .in (and .shine, and the cli-* classes) as things scroll into view. */
+
+/* The squares. Tiles are laid one after another with a little spring. */
+@keyframes tileIn {
+    0% { opacity: 0.25; transform: scale(0.3); }
+    55% { opacity: 1; transform: scale(1.14); }
+    80% { transform: scale(0.96); }
+    100% { opacity: 1; transform: none; }
+}
+
+@keyframes glyphIn {
+    from { opacity: 0.35; transform: translateY(3px); }
+    to { opacity: 1; transform: none; }
+}
+
+/* One slow wave of light across the four tiles, left to right, once */
+@keyframes wave700 { 0%, 100% { fill: #1E5AA8; } 45% { fill: #8DADD5; } }
+@keyframes wave500 { 0%, 100% { fill: #3B82C4; } 45% { fill: #A0BFE1; } }
+@keyframes wave300 { 0%, 100% { fill: #5BA3D9; } 45% { fill: #9AC7E8; } }
+
+nav .logo-mark .tile,
+nav .logo-mark .glyph {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+nav .logo-mark .tile {
+    --tile-ease: cubic-bezier(0.34, 1.4, 0.64, 1);
+    animation: tileIn 0.34s var(--tile-ease) both, wave700 0.7s ease-in-out 0.62s both;
+}
+
+/* Laid clockwise, like tiles on a wall; the light then crosses left to right */
+nav .logo-mark .tile-b { animation-name: tileIn, wave500; animation-delay: 0.07s, 0.76s; }
+nav .logo-mark .tile-d { animation-delay: 0.14s, 0.76s; }
+nav .logo-mark .tile-c { animation-name: tileIn, wave300; animation-delay: 0.21s, 0.62s; }
+nav .logo-mark .glyph { animation: glyphIn 0.3s ease-out 0.28s both; }
+
+.section-label.in::before,
+.section-label.in::after,
+.eval-dots.in i,
+.not-found-tiles i,
+.step.in .step-tiles i.on {
+    animation: tileIn 0.34s cubic-bezier(0.34, 1.4, 0.64, 1) both;
+}
+
+.section-label.in::after { animation-delay: 0.08s; }
+.eval-dots.in i:nth-child(2), .not-found-tiles i:nth-child(2), .step.in .step-tiles i.on:nth-child(2) { animation-delay: 0.07s; }
+.eval-dots.in i:nth-child(4), .not-found-tiles i:nth-child(4), .step.in .step-tiles i.on:nth-child(3) { animation-delay: 0.14s; }
+.eval-dots.in i:nth-child(3), .not-found-tiles i:nth-child(3) { animation-delay: 0.21s; }
+.step.in .step-tiles i.on { animation-delay: calc(0.25s + var(--d, 0s)); }
+.step.in .step-tiles i.on:nth-child(2) { --d: 0.08s; }
+.step.in .step-tiles i.on:nth-child(3) { --d: 0.16s; }
+
+/* About: the stats sit in the logo's four tiles, laid in the same order */
+@keyframes statIn {
+    0% { opacity: 0.35; transform: scale(0.88); }
+    60% { opacity: 1; transform: scale(1.02); }
+    100% { opacity: 1; transform: none; }
+}
+
+.about-stats.in > * { animation: statIn 0.45s cubic-bezier(0.34, 1.4, 0.64, 1) both; }
+.about-stats.in > :nth-child(2) { animation-delay: 0.07s; }
+.about-stats.in > :nth-child(4) { animation-delay: 0.14s; }
+.about-stats.in > :nth-child(3) { animation-delay: 0.21s; }
+
+/* A band of light sweeps once across the italic accent word, as in the terminal:
+   the base colour rising to a light peak with a quadratic falloff, about five characters
+   either side. The band is its own background layer over the base colour, clipped to the text. */
+@keyframes shine {
+    from { background-position: -5em 0, 0 0; }
+    to { background-position: calc(100% + 5em) 0, 0 0; }
+}
+
+h1 em,
+h2 em {
+    --shine-base: var(--blue-700);
+    --shine-peak: 91, 163, 217;
+}
+
+.hosting-copy h2 em,
+.contact h2 em {
+    --shine-base: var(--gold);
+    --shine-peak: 255, 244, 214;
+}
+
+h1 em.shine,
+h2 em.shine {
+    padding: 0 0.12em;
+    margin: 0 -0.12em;
+    background-image:
+        linear-gradient(90deg,
+            rgba(var(--shine-peak), 0) 0%,
+            rgba(var(--shine-peak), 0.06) 12.5%,
+            rgba(var(--shine-peak), 0.25) 25%,
+            rgba(var(--shine-peak), 0.56) 37.5%,
+            rgb(var(--shine-peak)) 50%,
+            rgba(var(--shine-peak), 0.56) 62.5%,
+            rgba(var(--shine-peak), 0.25) 75%,
+            rgba(var(--shine-peak), 0.06) 87.5%,
+            rgba(var(--shine-peak), 0) 100%),
+        linear-gradient(var(--shine-base), var(--shine-base));
+    background-size: 5em 100%, 100% 100%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 1s cubic-bezier(0.45, 0.05, 0.55, 0.95) var(--shine-delay, 0s) both;
+}
+
+.hero h1 em.shine { --shine-delay: 0.45s; }
+
+/* The terminal mocks marked data-cli play like the Brushtail CLI when they scroll into view:
+   lines print in turn, the step in progress spins and shimmers with a timer, then settles
+   into its mark and value. Without the script they simply show the finished run. */
+.eval-card[data-cli] .eval-card-body > *,
+.eval-card[data-cli] .eval-rows li,
+.eval-card[data-cli] .eval-meter span {
+    animation: none;
+}
+
+@keyframes cliIn {
+    from { opacity: 0.3; transform: translateY(3px); }
+    to { opacity: 1; transform: none; }
+}
+
+@keyframes markIn {
+    0% { transform: scale(0.4); }
+    60% { transform: scale(1.25); }
+    100% { transform: none; }
+}
+
+.eval-card .cli-wait {
+    opacity: 0.3;
+    transition: opacity 0.15s ease-out;
+}
+
+.eval-card .cli-wait .eval-meter span {
+    transform: scaleX(0);
+}
+
+.eval-card[data-cli] .eval-card-body .cli-show {
+    animation: cliIn 0.3s ease-out both;
+}
+
+.eval-card .cli-active .eval-ok {
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.eval-card .cli-active .eval-meter span {
+    transform: scaleX(0);
+}
+
+.eval-card .cli-active .eval-name::after {
+    content: "…";
+}
+
+.eval-card .cli-active .eval-score {
+    color: #8FA7C4;
+}
+
+.eval-card .cli-active .eval-name,
+.eval-card-title.shine {
+    --shine-base: var(--blue-300);
+    --shine-peak: 232, 241, 250;
+    background-image:
+        linear-gradient(90deg,
+            rgba(var(--shine-peak), 0) 0%,
+            rgba(var(--shine-peak), 0.25) 25%,
+            rgb(var(--shine-peak)) 50%,
+            rgba(var(--shine-peak), 0.25) 75%,
+            rgba(var(--shine-peak), 0) 100%),
+        linear-gradient(var(--shine-base), var(--shine-base));
+    background-size: 5em 100%, 100% 100%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 0.7s linear infinite;
+}
+
+.eval-card-title.shine {
+    --shine-base: #A9BFD8;
+    animation: shine 0.7s linear both;
+}
+
+.eval-card .cli-done .eval-ok {
+    display: inline-block;
+    animation: markIn 0.3s cubic-bezier(0.34, 1.4, 0.64, 1) both;
+}
+
+.eval-card .cli-done .eval-meter span {
+    animation: meterIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Brushtail's severity bar: findings by severity, in proportion */
+.sev-bar {
+    display: flex;
+    flex-basis: 100%;
+    gap: 2px;
+    height: 6px;
+    margin-bottom: 0.2rem;
+}
+
+.sev-bar i { border-radius: 1px; }
+.sev-bar .high, .sev-key.high { background: #EB6834; }
+.sev-bar .medium, .sev-key.medium { background: #C98A1B; }
+
+.sev-key {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 1px;
+    margin-right: 0.45rem;
+    vertical-align: 0.05em;
+}
+
+@keyframes barFill {
+    from { clip-path: inset(0 100% 0 0); }
+    to { clip-path: inset(0 0 0 0); }
+}
+
+.eval-card .cli-show .sev-bar {
+    animation: barFill 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
 }
 
 @media (prefers-reduced-motion: reduce) {
