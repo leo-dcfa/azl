@@ -653,6 +653,10 @@ h2 em {
     font-size: 1.1rem;
 }
 
+.own-copy p:not(.section-label) + p {
+    margin-top: 1rem;
+}
+
 .own-points {
     list-style: none;
     border-top: 1px solid var(--line-strong);
@@ -1128,8 +1132,15 @@ h2 em {
 }
 
 .own-copy a,
-.service-card:not(.featured) a {
+.service-card:not(.featured) a,
+.step p a,
+.faq-item p a {
     color: var(--blue-700);
+    font-weight: 600;
+}
+
+.hosting-copy a {
+    color: var(--blue-300);
     font-weight: 600;
 }
 

@@ -18,18 +18,19 @@ permalink: /brushtail/
                 Book a check
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9H14M14 9L9.5 4.5M14 9L9.5 13.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <a href="#checks" class="btn btn-ghost">What we check</a>
+            <a href="/brushtail/sample-report.html" data-goatcounter-click="brushtail-sample-hero" data-goatcounter-title="See a sample report (top)" class="btn btn-ghost">See a sample report</a>
         </div>
         </div>
         <div class="hero-visual">
-            <figure class="eval-card" aria-label="Illustrative example, with made-up data: a terminal running a Brushtail check on an office’s staff network, finding 23 devices, 4 risky services, 2 known flaws and a guest Wi-Fi that reaches the staff network">
+            <figure class="eval-card" aria-label="Illustrative example, with made-up data: a terminal showing a Brushtail dry run that confirms the signed scope and sends nothing, then the check itself, which finds 23 devices, 4 risky services, 2 known flaws and a guest Wi-Fi that reaches the staff network">
                 <div class="eval-card-bar">
                     <span class="eval-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
                     <span class="eval-card-title">brushtail</span>
                 </div>
                 <div class="eval-card-body">
-                    <p class="eval-cmd"><span class="prompt">$</span> brushtail scan <span class="flag">--scope</span> office.scope</p>
-                    <p class="eval-reply">Signed by the practice manager · staff Wi-Fi · today, 9 am to 5 pm</p>
+                    <p class="eval-cmd"><span class="prompt">$</span> brushtail check office-check</p>
+                    <p class="eval-reply">Dry run, sends nothing · signed by the practice manager · today, 9 am to 5 pm</p>
+                    <p class="eval-cmd"><span class="prompt">$</span> brushtail run office-check</p>
                     <ul class="eval-rows">
                         <li style="--score: 100%"><span class="eval-ok">✓</span><span class="eval-name">devices found</span><span class="eval-meter"><span></span></span><span class="eval-score">23</span></li>
                         <li style="--score: 40%" class="warn"><span class="eval-ok">!</span><span class="eval-name">risky services</span><span class="eval-meter"><span></span></span><span class="eval-score">4</span></li>
@@ -132,7 +133,7 @@ permalink: /brushtail/
             <article class="service-card">
                 <div class="service-head"><span class="service-num">06</span></div>
                 <h3>The re-test</h3>
-                <p>Once you’ve fixed things, a second check shows what’s fixed, what’s still open and anything new since the first visit.</p>
+                <p>Once you’ve fixed things, a second check shows what’s fixed, what’s still open and anything new since the first visit. <a href="/brushtail/sample-retest.html">See a sample re-test</a>.</p>
                 <div class="service-tags">
                     <span class="service-tag">Before and after</span>
                 </div>
@@ -150,12 +151,12 @@ permalink: /brushtail/
             <li class="step">
                 <p class="step-tag">Before the visit</p>
                 <h3>1. Talk</h3>
-                <p>What’s in your office, who looks after it, and what worries you. We can show you a sample report built from made-up data, so you see what you’ll get before we touch your network.</p>
+                <p>What’s in your office, who looks after it, and what worries you. We can show you a <a href="/brushtail/sample-report.html">sample report</a> built from made-up data, so you see what you’ll get before we touch your network.</p>
             </li>
             <li class="step">
                 <p class="step-tag">Before the visit</p>
                 <h3>2. Scope</h3>
-                <p>You sign a scope that records who authorised the check, the hours it may run and the networks it covers. The tool refuses anything outside it.</p>
+                <p>You sign a scope that records who authorised the check, the hours it may run and the networks it covers. The tool refuses anything outside it. See <a href="/brushtail/how-we-test/">how we test</a>.</p>
             </li>
             <li class="step">
                 <p class="step-tag">On the day</p>
@@ -175,7 +176,7 @@ permalink: /brushtail/
             <li class="step">
                 <p class="step-tag">After the visit</p>
                 <h3>6. Re-test</h3>
-                <p>We check again and show you what’s fixed, what’s still open and anything new.</p>
+                <p>We check again and show you what’s fixed, what’s still open and anything new. Here’s a <a href="/brushtail/sample-retest.html">sample re-test</a>.</p>
             </li>
         </ol>
     </div>
@@ -188,6 +189,7 @@ permalink: /brushtail/
             <p class="section-label">Careful by design</p>
             <h2>Quiet, gentle and kept <em>in scope</em></h2>
             <p>Brushtail looks and reports. It doesn’t try to break in, change settings or slow your network down, and every rule below is enforced by the tool itself.</p>
+            <p><a href="/brushtail/how-we-test/">Read how we test, rule by rule</a></p>
         </div>
         <ul class="own-points">
             <li class="own-point">
