@@ -1356,7 +1356,7 @@ footer {
     }
 }
 
-/* Narrow desktop: seven nav links still fit on one line */
+/* Narrow desktop: the nav links still fit on one line */
 @media (min-width: 901px) and (max-width: 1100px) {
     nav {
         padding: 1rem 1.5rem;
